@@ -2,6 +2,7 @@
 
 
 INTRODUCTION
+  
   DDGun is an untrained method for predicting teh stability change upon mutation
 
 
@@ -33,7 +34,7 @@ CITATION
 INSTALLATION
 
      1) Download DDGun
-   	git https://github.com/biofold/ddgun
+        git https://github.com/biofold/ddgun
 
      2) Install hhblits
         cd ddgun/utils

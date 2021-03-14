@@ -103,7 +103,7 @@ def get_options():
 	if not os.path.isfile(pblast):
 		print >> sys.stderr,'ERROR: hhblits program not found in',pblast
 		sys.exit(4)
-	if not os.path.isfile(uniref90):
+	if not os.path.isfile(uniref90+'_a3m_db.index'):
 		print >> sys.stderr,'ERROR: DB file clust30_2018_08 not found in',uniref90
 		sys.exit(5)
 	if args.ml:
@@ -377,7 +377,7 @@ def get_seq_prof(hsspfile,l_mut,w=2,pot='SKOJ970101'):
 	return l_score
 
 
-def run_3d_pipeline(pdbfile,chain,outdir=None,atoms=at,blast_prog=pblast,dssp_prog=pdssp,db=uniref90,e=1e-9):
+def run_3d_pipeline(pdbfile,chain,blast_prog=pblast,db=uniref90,outdir=None,atoms=at,dssp_prog=pdssp,e=1e-9):
 	err=0
 	seq=''
 	if outdir:
@@ -522,7 +522,7 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
 
 if __name__ == '__main__':
 	pdbfile,chain,muts,pots,d,win,verb,outfile,outdir=get_options()
-	chainfile,dsspfile,hsspfile=run_3d_pipeline(pdbfile,chain,outdir)
+	chainfile,dsspfile,hsspfile=run_3d_pipeline(pdbfile,chain,pblast,uniref90,outdir)
 	l_data,l_hssp,lres_env=get_muts_score(chainfile,chain,dsspfile,hsspfile,muts,pots,d,win,outdir)
 	if len(l_data)==0: 
 		print >> sys.stderr,'ERROR: Incorrect mutation list.'

@@ -41,7 +41,6 @@ from hsspTools import readHSSP, hssp2dic
 
 aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
-pblast='/share/apps/hh-suite/build/bin/hhblits'
 pblast=util_path+'/hh-suite/bin/hhblits'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 
@@ -87,7 +86,7 @@ def get_options():
 	if not os.path.isfile(pblast):
 		print >> sys.stderr,'ERROR: hhblits program not found in',pblast
 		sys.exit(4)
-	if not os.path.isfile(uniref90):
+	if not os.path.isfile(uniref90+'_a3m_db.index'):
 		print >> sys.stderr,'ERROR: DB file clust30_2018_08 not found in',uniref90
 		sys.exit(5)
 	if args.ml:
@@ -129,19 +128,6 @@ def sort_mut(imut,sep=','):
 	t_mut.sort()
         return ','.join([i[1] for i in t_mut])
 
-
-def blast_seq(seq,blast_prog=pblast,db=uniref90,e=1e-9):
-	ofile=tempfile.mkstemp()[1]
-	f=open(ofile,'w')
-	f.write(seq)
-	f.close()
-	cmd=blast_prog+' -i '+tfile+' -d '+db+' -e '+str(e)+' -j 1 -b 1000 -v 1000 -o '+ofile+'.blast'
-	out=getstatusoutput(cmd)
-	if out[0]!=0:
-		ofile=''
-		print >> sys.stderr,'BLAST_ERROR:'+out[1]
-	return ofile
-	
 	
 def ali2fasta(filein,fileout):
 	fb=open(filein)
@@ -262,7 +248,7 @@ def get_seq_prof(hsspfile,l_mut,w=2,pot='SKOJ970101'):
 	return l_score
 
 
-def run_seq_pipeline(seqfile,outdir=None,blast_prog=pblast,db=uniref90,e=1e-9):
+def run_seq_pipeline(seqfile,blast_prog=pblast,db=uniref90,outdir=None,e=1e-9):
 	if outdir:
 		tmpdir=outdir
 		rd=''
@@ -363,7 +349,7 @@ def print_data(seqfile,l_data,l_hssp,verb,sep=','):
 
 if __name__ == '__main__':
 	seqfile,muts,pots,win,verb,outfile,outdir=get_options()
-	hsspfile=run_seq_pipeline(seqfile,outdir)
+	hsspfile=run_seq_pipeline(seqfile,pblast,uniref90,outdir)
 	l_data,l_hssp=get_muts_score(seqfile,hsspfile,muts,pots,win,outdir)
 	if len(l_data)==0:
 		print >> sys.stderr,'ERROR: Incorrect mutation list.'

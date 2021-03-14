@@ -3,7 +3,7 @@
 
 INTRODUCTION
   
-  DDGun is an untrained method for predicting teh stability change upon mutation
+  DDGun is an untrained method for predicting the stability change upon mutation
 
 
 LICENSE

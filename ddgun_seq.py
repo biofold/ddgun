@@ -43,7 +43,7 @@ aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
 pblast='/share/apps/hh-suite/build/bin/hhblits'
 pblast=util_path+'/hh-suite/hhblits'
-uniref90='/share/data/uniclust30_2018_08/uniclust30_2018_08'
+uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 
 
 def get_options():
@@ -316,7 +316,7 @@ def print_data(seqfile,l_data,l_hssp,verb,sep=','):
 	nfile=seqfile.split('/')[-1]
 	s_mut=[]
 	out_data=[]
-	header='#SEQFILE\tVARIANT\tDDG\tT_DDG\n'
+	header='#SEQFILE\tVARIANT\tS_DDG\tT_DDG\n'
 	if verb==1: header='#SEQFILE\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tDDG\tT_DDG\n'
 	if verb==2: header='#SEQFILE\tVARIANT\tCONSERVATION\tS_KD\tS_BL\tS_PROF\tDDG\tT_DDG\n'
 	for mut in l_data.keys():

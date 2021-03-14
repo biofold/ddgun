@@ -43,13 +43,9 @@ from hsspTools import readHSSP, hssp2dic
 
 aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
-mutpy=tool_path+'/mutate_model.py'
-#pblast='/share/apps/hh-suite/build/bin/hhblits'
 pblast=util_path+'/hh-suite/hhblits'
 pdssp=util_path+'/dssp/dsspcmbi'
-pmod='/share/apps/modeller-9.20/bin/modpy.sh'
-#pmod=util_path+'/modeller-9.20/bin/modpy.sh'
-uniref90='/share/data/uniclust30_2018_08/uniclust30_2018_08'
+uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 at=pdb.HeavyAtomType
 
 
@@ -477,7 +473,7 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
 		except:
 			s_mut.append([[i[1:-1] for i in mut.split(sep)],mut])
 	s_mut.sort()
-	header='#PDBFILE\tCHAIN\tVARIANT\tDDG\tT_DDG\n'
+	header='#PDBFILE\tCHAIN\tVARIANT\tS_DDG\tT_DDG\n'
 	if verb==1: header='#PDBFILE\tCHAIN\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tS_3D[MUT]\tRSA[WT]\tRSA[MUT]\tDDG\tT_DDG\n'
 	if verb==2: header='#PDBFILE\tCHAIN\tVARIANT\tCONSERVATION\tCONTACTS\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tS_3D[MUT]\tRSA[WT]\tRSA[MUT]\tDDG\tT_DDG\n'
 	for lpos,mut in s_mut:

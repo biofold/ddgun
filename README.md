@@ -1,24 +1,26 @@
-##  Copyright (C) 2019  Ludovica Montanucci, Emidio Capriotti 
-##                      and Piero Fariselli
-##
-##  This program and all program in this package are free software;
-##  you can redistribute it and/or modify it under the terms of the
-##  GNU General Public License as published by the Free Software
-##  Foundation; either version 2 of the License, or (at your option)
-##  any later version.
-##
-##  This program is distributed in the hope that it will be useful,
-##  but WITHOUT ANY WARRANTY; without even the implied warranty of
-##  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-##  GNU General Public License for more details.
-##
-##  PLEASE CITE
-##
-##  Montanucci L, Capriotti E, Frank Y, Ben-Tal N, Fariselli P. (2019).
-##  DDGun: an untrained method for the prediction of protein stability
-##  changes upon single and multiple point variations.
-##  BMC Bioinformatics. 20 (Suppl 14): 335. PMID:31266447
-##
+# DDGun - Untrained method for predicting teh stability change upon mutation
+
+  Copyright (C) 2019  Ludovica Montanucci, Emidio Capriotti 
+                      and Piero Fariselli
+
+  This program and all program in this package are free software;
+  you can redistribute it and/or modify it under the terms of the
+  GNU General Public License as published by the Free Software
+  Foundation; either version 2 of the License, or (at your option)
+  any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  PLEASE CITE
+
+  Montanucci L, Capriotti E, Frank Y, Ben-Tal N, Fariselli P. (2019).
+  DDGun: an untrained method for the prediction of protein stability
+  changes upon single and multiple point variations.
+  BMC Bioinformatics. 20 (Suppl 14): 335. PMID:31266447
+
 
 
 - Run DDGun 3D:

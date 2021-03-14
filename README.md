@@ -34,6 +34,8 @@ CITATION
 INSTALLATION
 
      # Automatic Installation
+       git https://github.com/biofold/ddgun
+       cd ddgun
        python setup.py
 
      # Manual Installation

@@ -1,0 +1,16 @@
+git
+echo "2) Install hhblits"
+cd ddgun/utils
+git clone https://github.com/soedinglab/hh-suite.git
+mkdir -p hh-suite/build && cd hh-suite/build
+cmake -DCMAKE_INSTALL_PREFIX=. ..
+make -j 4 && make install
+cp ../bin/hhblits ../
+
+echo "3) Download uniclust30_2018_08_hhsuite (~25Gb)"
+cd ../../../data
+wget http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz
+
+echo "4) untar uniclust30_2018_08_hhsuite.tar.gz"
+tar -xzvf uniclust30_2018_08_hhsuite.tar.gz
+cd ../

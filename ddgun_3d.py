@@ -43,7 +43,7 @@ from hsspTools import readHSSP, hssp2dic
 
 aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
-pblast=util_path+'/hh-suite/hhblits'
+pblast=util_path+'/hh-suite/bin/hhblits'
 pdssp=util_path+'/dssp/dsspcmbi'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 at=pdb.HeavyAtomType
@@ -51,6 +51,7 @@ at=pdb.HeavyAtomType
 
 
 def get_options():
+	global uniref90, pblast
 	parser = argparse.ArgumentParser(description='Program for generating protein mutations features.')
 	#parser = OptionParser('\nUsage : python %prog  pdbfile chain mutation []')
 	parser.add_argument ('pdbfile', type=str)
@@ -67,6 +68,8 @@ def get_options():
 	parser.add_argument ("--dmax", action="store",type=float, dest="dmax", help="Maximum radius around mutation")
 	parser.add_argument ("-v", "--verbose", action="store",type=int, dest="verb", help="Verbose output")
 	parser.add_argument ("--outdir", "--out-dir", action="store",type=str, dest="outdir", help="Output directory")
+	parser.add_argument ("-d", "--db", action="store",type=str, dest="dbfile", help="DB file for hhblits")
+	parser.add_argument ("-s", "--search-prog", action="store",type=str, dest="hhblits", help="hhblits")
 	args = parser.parse_args()
 	muts={}
 	sep=','
@@ -84,7 +87,7 @@ def get_options():
 	chain=args.chain
 	if os.path.isfile(pdbfile)==False:	
 		print >> sys.stderr,'ERROR: Incorrect PDB file '+pdbfile+'.'
-		sys.exit()
+		sys.exit(1)
 	if args.aa1: aa1=args.aa1
 	if args.aa2: aa2=args.aa2
 	if args.aa3: aa3=args.aa3
@@ -95,6 +98,14 @@ def get_options():
 	if args.verb in [1,2]: verb=args.verb
 	if args.outdir: outdir=args.outdir
 	if args.outfile: outfile=args.outfile
+	if args.dbfile: uniref90=args.dbfile
+	if args.hhblits: pblast=args.hhblits
+	if not os.path.isfile(pblast):
+		print >> sys.stderr,'ERROR: hhblits program not found in',pblast
+		sys.exit(4)
+	if not os.path.isfile(uniref90):
+		print >> sys.stderr,'ERROR: DB file clust30_2018_08 not found in',uniref90
+		sys.exit(5)
 	if args.ml:
 		if parse_mut(args.mutations): 
 			muts[sort_mut(args.mutations)]=[mut for mut in sort_mut(args.mutations).split(sep) if mut!='']
@@ -104,10 +115,10 @@ def get_options():
 			muts=dict((sort_mut(mut),sort_mut(mut).split(sep)) for mut in lmut.replace(' ','').split('\n') if parse_mut(mut))
 	if len(muts)==0:
 		print >> sys.stderr,'ERROR: Incorrect mutation list.'
-		sys.exit()
+		sys.exit(2)
 	if dmin>=dmax:
 		print >> sys.stderr,'ERROR: Incorrect radius distance range ',dmin,dmax
-		sys.exit()
+		sys.exit(3)
 	return pdbfile,chain,muts,[aa1,aa2,aa3,raa3],[dmin,dmax],win,verb,outfile,outdir
     
 

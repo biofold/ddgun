@@ -33,6 +33,10 @@ CITATION
 
 INSTALLATION
 
+     # Automatic Installation
+       python setup.py
+
+     # Manual Installation
      1) Download DDGun
         git https://github.com/biofold/ddgun
 
@@ -40,9 +44,8 @@ INSTALLATION
         cd ddgun/utils
         git clone https://github.com/soedinglab/hh-suite.git
         mkdir -p hh-suite/build && cd hh-suite/build
-        cmake -DCMAKE_INSTALL_PREFIX=. ..
+        cmake -DCMAKE_INSTALL_PREFIX=.. ..
         make -j 4 && make install
-        cp ../bin/hhblits ../
 
      3) Download uniclust30_2018_08_hhsuite (~25Gb)
         cd ../../../data

@@ -1,4 +1,6 @@
-git
+echo "1) Download DDGun"
+git https://github.com/biofold/ddgun
+
 echo "2) Install hhblits"
 cd ddgun/utils
 git clone https://github.com/soedinglab/hh-suite.git

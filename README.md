@@ -30,6 +30,28 @@ CITATION
   BMC Bioinformatics. 20 (Suppl 14): 335. PMID:31266447
 
 
+INSTALLATION
+
+     1) Download DDGun
+   	git https://github.com/biofold/ddgun
+
+     2) Install hhblits
+        cd ddgun/utils
+        git clone https://github.com/soedinglab/hh-suite.git
+        mkdir -p hh-suite/build && cd hh-suite/build
+        cmake -DCMAKE_INSTALL_PREFIX=. ..
+        make -j 4 && make install
+        cp ../bin/hhblits ../
+
+     3) Download uniclust30_2018_08_hhsuite (~25Gb)
+        cd ../../../data
+        wget http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz
+
+     4) untar uniclust30_2018_08_hhsuite.tar.gz
+        tar -xzvf uniclust30_2018_08_hhsuite.tar.gz
+        cd ../
+
+
 USAGE
 
     - Run DDGun 3D:

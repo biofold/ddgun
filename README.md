@@ -32,7 +32,7 @@ CITATION
 
 USAGE
 
-   - Run DDGun 3D:
+    - Run DDGun 3D:
         ./ddgun_3d.py /home/ddgun/test/1aar.pdb A /home/ddgun/test/1aar.muts
 
         #PDBFILE        CHAIN   VARIANT S_DDG   T_DDG

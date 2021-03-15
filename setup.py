@@ -76,6 +76,9 @@ def task_3():
 		print >>sys.stderr,'ERROR: untar uniclust30_2018_08 not completed\n',out[1]
 		os._exit(4)
 		#sys.exit(4)
+	else:
+		cmd='cd '+prog_dir+'/data/;rm uniclust30_2018_08_hhsuite.tar.gz'
+		getstatusoutput(cmd)
 	print '\b   done!'
 	return
 

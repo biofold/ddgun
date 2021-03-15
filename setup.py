@@ -54,9 +54,7 @@ def task_1():
 
 def task_2():
 	www_uc30='http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz'
-	www_uc30='http://folding.biofold.org/ddgun/predictions.tar.gz'
 	file_uc30='uniclust30_2018_08_hhsuite.tar.gz'
-	file_uc30='predictions.tar.gz'
 	cmd='cd '+prog_dir+'/data/;'
 	cmd=cmd+'wget -q '+www_uc30+';'
 	cmd=cmd+'ls '+file_uc30
@@ -71,7 +69,6 @@ def task_2():
 
 def task_3():
 	file_uc30='uniclust30_2018_08_hhsuite.tar.gz'
-	file_uc30='predictions.tar.gz'
 	cmd='cd '+prog_dir+'/data/;'
 	cmd=cmd+'tar -xzvf '+file_uc30
 	out=getstatusoutput(cmd)

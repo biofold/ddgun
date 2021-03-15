@@ -1,12 +1,12 @@
 # Automatic Installation
-git https://github.com/biofold/ddgun
+git clone https://github.com/biofold/ddgun
 cd ddgun
 python setup.py
 
 
 # Manual installation
 echo "1) Download DDGun"
-git https://github.com/biofold/ddgun
+git clone https://github.com/biofold/ddgun
 
 echo "2) Install hhblits"
 cd ddgun/utils

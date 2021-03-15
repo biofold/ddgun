@@ -1,5 +1,5 @@
 #/usr/bin/env python
-import os, sys, time, threading
+import os, sys, time, threading, argparse
 from commands import getstatusoutput
 global prog_path
 
@@ -54,7 +54,9 @@ def task_1():
 
 def task_2():
 	www_uc30='http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz'
+	www_uc30='http://folding.biofold.org/ddgun/predictions.tar.gz'
 	file_uc30='uniclust30_2018_08_hhsuite.tar.gz'
+	file_uc30='predictions.tar.gz'
 	cmd='cd '+prog_dir+'/data/;'
 	cmd=cmd+'wget -q '+www_uc30+';'
 	cmd=cmd+'ls '+file_uc30
@@ -69,6 +71,7 @@ def task_2():
 
 def task_3():
 	file_uc30='uniclust30_2018_08_hhsuite.tar.gz'
+	file_uc30='predictions.tar.gz'
 	cmd='cd '+prog_dir+'/data/;'
 	cmd=cmd+'tar -xzvf '+file_uc30
 	out=getstatusoutput(cmd)
@@ -83,17 +86,26 @@ def task_3():
 
 def main():
 	global prog_dir, stop, kill
+	db=False
+	parser = argparse.ArgumentParser(description='Program for the installation of DDGun.')
+        parser.add_argument ("-d", "--db",action="store_true",dest="db", help="Install DB only")
+        args = parser.parse_args()
+	if args.db: db=True
 	prog_dir = os.path.dirname(os.path.abspath(__file__))
 	kill = False
 	stop = False
 	p = progress_bar_loading()
 	p.start()
+	c=1
 	try:
-		print >> sys.stderr,'1) Install hhblits'	
-    		task_1()
-		print >> sys.stderr,'2) Download uniclust30_2018_08 (25Gb)'
+		if not db:
+			print >> sys.stderr,str(c)+') Install hhblits'	
+    			task_1()
+			c=c+1
+		print >> sys.stderr,str(c)+') Download uniclust30_2018_08 (25Gb)'
     		task_2()
-		print >> sys.stderr,'3) Untar uniclust30_2018_08 (25Gb)'
+		c=c+1
+		print >> sys.stderr,str(c)+') Untar uniclust30_2018_08 (25Gb)'
 		task_3()
 		time.sleep(1)
 		stop=True

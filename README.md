@@ -29,18 +29,19 @@ CITATION
   DDGun: an untrained method for the prediction of protein stability
   changes upon single and multiple point variations.
   BMC Bioinformatics. 20 (Suppl 14): 335. PMID:31266447
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6606456/pdf/12859_2019_Article_2923.pdf
 
 
 INSTALLATION
 
      # Automatic Installation
-       git https://github.com/biofold/ddgun
+       git clone https://github.com/biofold/ddgun
        cd ddgun
        python setup.py
 
      # Manual Installation
      1) Download DDGun
-        git https://github.com/biofold/ddgun
+        git clone https://github.com/biofold/ddgun
 
      2) Install hhblits
         cd ddgun/utils

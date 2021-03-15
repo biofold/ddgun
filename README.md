@@ -62,7 +62,7 @@ INSTALLATION
 USAGE
 
     - Run DDGun 3D:
-        ./ddgun_3d.py /home/ddgun/test/1aar.pdb A /home/ddgun/test/1aar.muts
+        ./ddgun_3d.py test/1aar.pdb A test/1aar.muts
 
         #PDBFILE        CHAIN   VARIANT S_DDG   T_DDG
         1aar.pdb        A       K6A     0.4     0.4
@@ -72,7 +72,7 @@ USAGE
 
 
     - Run DDGun Seq:
-        ./ddgun_seq.py /home/ddgun/test/1aar.pdb.A.fasta /home/ddgun/test/1aar.muts
+        ./ddgun_seq.py test/1aar.pdb.A.fasta test/1aar.muts
 
         #SEQFILE        VARIANT S_DDG   T_DDG
         1aar.pdb.A.fasta        K6A     0.4     0.4

@@ -23,7 +23,7 @@
   GNU General Public License for more details.
 
 
-CITATION
+#### CITATION
 
   *Montanucci L, Capriotti E, Frank Y, Ben-Tal N, Fariselli P.* (2019).
   DDGun: an untrained method for the prediction of protein stability
@@ -36,7 +36,7 @@ CITATION
   
 
 
-INSTALLATION
+#### INSTALLATION
 
      # Automatic Installation
        git clone https://github.com/biofold/ddgun
@@ -63,7 +63,7 @@ INSTALLATION
         cd ../
 
 
-USAGE
+#### USAGE
 
     - Run DDGun 3D:
         ./ddgun_3d.py test/1aar.pdb A test/1aar.muts

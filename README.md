@@ -1,12 +1,12 @@
 # DDGun
 
 
-INTRODUCTION
+##INTRODUCTION
   
   DDGun is an untrained method for predicting the stability change upon mutation
 
 
-LICENSE
+###LICENSE
 
   Copyright (C) 2019  Ludovica Montanucci, Emidio Capriotti 
                       and Piero Fariselli

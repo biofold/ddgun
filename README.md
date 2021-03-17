@@ -28,7 +28,8 @@ CITATION
   Montanucci L, Capriotti E, Frank Y, Ben-Tal N, Fariselli P. (2019).
   DDGun: an untrained method for the prediction of protein stability
   changes upon single and multiple point variations.
-  BMC Bioinformatics. 20 (Suppl 14): 335. [PMID:31266447](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6606456/pdf/12859_2019_Article_2923.pdf)  Supplementary Files are available at:
+  BMC Bioinformatics. 20 (Suppl 14): 335. [PMID:31266447](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6606456/pdf/12859_2019_Article_2923.pdf)\ 
+  Supplementary Files are available at:
   [https://doi.org/10.5281/zenodo.4613881](https://doi.org/10.5281/zenodo.4613881)
 
 

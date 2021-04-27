@@ -85,10 +85,10 @@
         1aar.pdb.A.fasta        T9A,G10A        -0.7,-0.6       -0.7
 
 
-    - Legend:
+    - Output Legend:
         
         PDBFILE: Inoput PDB File
-        CHAIN:   Input PDB File Chain ()
+        CHAIN:   Input PDB File Chain
         SEQFILE: Input Sequence File
         VARIANT: Comma-separated protein variant in the format XPOSY (X=Wild-Type Residue, POS=Position, Y=Mutant Residue)
         S_DDG:   Comma-separated predicted DDG of unfolding for single mutants

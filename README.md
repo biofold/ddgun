@@ -86,7 +86,6 @@
 
 
     - Output Legend:
-        
         PDBFILE: Inoput PDB File.
         CHAIN:   Input PDB File Chain.
         SEQFILE: Input Sequence File.

@@ -69,7 +69,7 @@
         ./ddgun_3d.py test/1aar.pdb A test/1aar.muts
 
         #PDBFILE        CHAIN   VARIANT S_DDG   T_DDG
-        1aar.pdb        A       K6A     0.4     0.4
+        1aar.pdb        A       K6A     0.5     0.5
         1aar.pdb        A       T7A     -0.3    -0.3
         1aar.pdb        A       L8A     -0.4    -0.4
         1aar.pdb        A       T9A,G10A        -0.1,-0.1       -0.1

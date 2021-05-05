@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 ##  Copyright (C) 2019  Ludovica Montanucci, Emidio Capriotti and Piero Fariselli
 ##
 ##  This program and all program in this package are free software;
@@ -25,7 +25,7 @@
 ##
 
 
-import os, sys, cPickle, tempfile, argparse
+import os, sys, pickle, tempfile, argparse
 from commands import getstatusoutput
 import numpy as np
 
@@ -129,9 +129,9 @@ def sort_mut(imut,sep=','):
 	v_mut=imut.split(sep)
 	t_mut=[(int(j[1:-1]),j) for j in v_mut]
 	t_mut.sort()
-        return ','.join([i[1] for i in t_mut])
+	return ','.join([i[1] for i in t_mut])
 
-	
+
 def ali2fasta(filein,fileout):
 	fb=open(filein)
 	vd=''
@@ -151,14 +151,16 @@ def get_hssp(hsspfile):
 
 
 def get_pot_res(res,pot='KYTJ820101'):
-	dpot=cPickle.load(open(data_path+'/aaindex1.pkl')).get(pot,{})
+	with open(data_path+'/aaindex1.pkl') as f:
+		dpot=pickle.load(f).get(pot,{})
 	return dpot.get(res,0.0)
 
 
 def get_pot_prof(hsspfile,l_mut,pot='KYTJ820101'):
 	l_score={}
 	l_hssp={}
-	dpot=cPickle.load(open(data_path+'/aaindex1.pkl')).get(pot,{})
+	with open(data_path+'/aaindex1.pkl') as f:
+		dpot=pickle.load(f).get(pot,{})
 	if len(dpot.keys())==0:
 		print >> sys.stderr,'Incorrect potential',pot
 		return l_score
@@ -190,7 +192,8 @@ def get_pot_prof(hsspfile,l_mut,pot='KYTJ820101'):
 
 def get_subs_prof(hsspfile,l_mut,pot='HENS920102'):
 	l_score={}
-	dpot=cPickle.load(open(data_path+'/aaindex2.pkl')).get(pot,{})
+	with open(data_path+'/aaindex2.pkl') as f:
+		dpot=pickle.load(f).get(pot,{})
 	if len(dpot.keys())==0:
 		print >> sys.stderr,'Incorrect potential',pot
 		return l_score
@@ -219,7 +222,8 @@ def get_subs_prof(hsspfile,l_mut,pot='HENS920102'):
 
 def get_seq_prof(hsspfile,l_mut,w=2,pot='SKOJ970101'):
 	l_score={}
-	dpot=cPickle.load(open(data_path+'/aaindex3.pkl')).get(pot,{})
+	with open(data_path+'/aaindex3.pkl') as f:
+		dpot=pickle.load(f).get(pot,{})
 	if len(dpot.keys())==0:
 		print >> sys.stderr,'Incorrect potential',pot
 		return l_score

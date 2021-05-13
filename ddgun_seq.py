@@ -282,7 +282,7 @@ def run_seq_pipeline(seqfile,blast_prog=pblast,db=uniref90,outdir=None,e=1e-9):
 		out=getstatusoutput(cmd)
 		if out[0]!=0:
 			print >> sys.stderr,'HSSP_ERROR:'+out[1]
-			getstatusoutput('rm -r '+blastfile+' '+rd)
+			#getstatusoutput('rm -r '+blastfile+' '+rd)
 			sys.exit(1)
 	return hsspfile
 	
@@ -308,7 +308,7 @@ def get_muts_score(seqfile,hsspfile,muts,pots,win,outdir=None):
 			l_data[i].append(v_score)
 	if not outdir:
 		odir=os.path.dirname(hsspfile)
-		getstatusoutput('rm -r '+odir)
+		#getstatusoutput('rm -r '+odir)
 	return l_data,l_hssp
 		
 		

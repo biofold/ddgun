@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 ##  Copyright (C) 2019  Ludovica Montanucci, Emidio Capriotti and Piero Fariselli
 ##
 ##  This program and all program in this package are free software;

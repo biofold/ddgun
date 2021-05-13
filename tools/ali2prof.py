@@ -36,7 +36,7 @@ def get_sequence(fastafile):
                         seq=seq+line.replace('\n','')
                 else:
                         #scode=line[1:].split()[0].split('|')[0]
-			scode=line[1:].split()[0]
+                        scode=line[1:].split()[0]
         return scode,seq
 
 

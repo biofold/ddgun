@@ -35,7 +35,8 @@ def get_sequence(fastafile):
                 if line[0]!='>':
                         seq=seq+line.replace('\n','')
                 else:
-                        scode=line[1:].split()[0].split('|')[0]
+                        #scode=line[1:].split()[0].split('|')[0]
+			scode=line[1:].split()[0]
         return scode,seq
 
 
@@ -171,7 +172,7 @@ def check_input(options,args):
 		seqfile=args[0]
         	alignfile=args[1]
         	outfile=args[2]
-        	readconfs()
+        	#readconfs()
 		if not(os.path.isfile(seqfile)):
                         sys.stderr.write('ERROR: Alignment file '+seqfile+' not found \n')
                         err=1

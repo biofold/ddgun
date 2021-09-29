@@ -55,6 +55,9 @@ def readfasta_align(protid,alifile):
 	if protseq!='': 
 		vali=[[protid,protseq]]+vali
 		protseq=protseq.replace('-','')
+	else:
+		print >> sys.stderr,'ERROR: Protein sequence ID not found in the alignment file',alifile
+		sys.exit(1)
 	return protseq,vali	
 	
 	

@@ -48,7 +48,7 @@ def readfasta_align(protid,alifile):
 	handle.close()
 	for ali in alis:
 		pid,seq=ali.id,str(ali.seq)
-		if pid==protid: 
+		if pid==protid or protid.find(pid)==0: 
 			protseq=seq
 		else:
 			vali.append([pid,seq])

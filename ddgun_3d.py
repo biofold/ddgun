@@ -485,8 +485,8 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
 			s_mut.append([[i[1:-1] for i in mut.split(sep)],mut])
 	s_mut.sort()
 	header='#PDBFILE\tCHAIN\tVARIANT\tS_DDG\tT_DDG\n'
-	if verb==1: header='#PDBFILE\tCHAIN\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tS_3D[MUT]\tRSA[WT]\tRSA[MUT]\tDDG\tT_DDG\n'
-	if verb==2: header='#PDBFILE\tCHAIN\tVARIANT\tCONSERVATION\tCONTACTS\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tS_3D[MUT]\tRSA[WT]\tRSA[MUT]\tDDG\tT_DDG\n'
+	if verb==1: header='#PDBFILE\tCHAIN\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tDDG\tT_DDG\n'
+	if verb==2: header='#PDBFILE\tCHAIN\tVARIANT\tCONSERVATION\tCONTACTS\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tDDG\tT_DDG\n'
 	for lpos,mut in s_mut:
 		pm=[]
 		n=len(lpos)
@@ -497,7 +497,7 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
 			f1=(1.1-vm[5]*0.01)
 			pred=(0.18*vm[0]+0.20*vm[1]-0.29*vm[2]-0.33*vm[3])*f1
 			pm.append(pred)
-			for k in range(7): v[k].append('%.3f' %vm[k])
+			for k in range(5): v[k].append('%.3f' %vm[k])
 			v[7].append('|'.join([str(f) for f in l_hssp[mut][j]]))
 			v[8].append('|'.join([r+p for r,p in lres_env[mut][j]]))
 			#print line+'\t'+str(j+1)+'\t'+'\t'.join([str(round(i,3)) for i in vm])+'\t'+str(round(pred,1))
@@ -506,7 +506,7 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
 		else:
 			mpred=max(pm)+min(pm)-sum(pm)/float(n)
 		sdata=','.join(v[0])+'\t'+','.join(v[1])+'\t'+','.join(v[2])+'\t'+\
-			','.join(v[3])+'\t'+','.join(v[4])+'\t'+','.join(v[5])+'\t'+','.join(v[6])
+			','.join(v[3])+'\t'+','.join(v[5])
 		sext=','.join(v[7])+'\t'+','.join(v[8])
 		spred=','.join([str(round(i,1)) for i in pm ])+'\t'+str(round(mpred,1))
 		if verb==1: line=line+'\t'+sdata

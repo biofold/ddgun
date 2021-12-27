@@ -497,7 +497,7 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
 			f1=(1.1-vm[5]*0.01)
 			pred=(0.18*vm[0]+0.20*vm[1]-0.29*vm[2]-0.33*vm[3])*f1
 			pm.append(pred)
-			for k in range(5): v[k].append('%.3f' %vm[k])
+			for k in range(4)+[5]: v[k].append('%.3f' %vm[k])
 			v[7].append('|'.join([str(f) for f in l_hssp[mut][j]]))
 			v[8].append('|'.join([r+p for r,p in lres_env[mut][j]]))
 			#print line+'\t'+str(j+1)+'\t'+'\t'.join([str(round(i,3)) for i in vm])+'\t'+str(round(pred,1))

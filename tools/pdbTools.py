@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 '''
 This package contains three classes RESIDUE,
 PDBChain, and PDBProtein.
@@ -9,7 +10,7 @@ This file also contains functions that read a pdb file
 and return a PDBChain or PDBProtein.
 '''
 
-
+from __future__ import print_function
 import sys
 import string 
 import numpy
@@ -286,7 +287,7 @@ def _getResidueA1(res3):
       "Z01": "A", "ZAD": "A", "ZAL": "A", "ZBC": "C", "ZBU": "U",
       "ZCL": "F", "ZCY": "C", "ZDU": "U", "ZFB": "X", "ZGU": "G",
       "ZHP": "N", "ZTH": "T", "ZU0": "T", "ZZJ": "A"}
-   if res3 in resa3Toa1.keys():
+   if res3 in list(resa3Toa1.keys()):
       return (resa3Toa1[res3])
    else:
       return('X')
@@ -337,7 +338,7 @@ def _neighborList(coords, threshold, tol=0, maincoords=None):
         coords[c].sort()
         for (val,i) in maincoords[c]:
             reshash[i].append(_listbsearch(coords[c],val,threshold,tol)) 
-    for i in reshash.keys(): # compute intersection
+    for i in list(reshash.keys()): # compute intersection
         x,y,z=reshash[i]
         reshash[i]=[]
         for e in x:
@@ -353,7 +354,7 @@ def _neighborList(coords, threshold, tol=0, maincoords=None):
 def _vetP(a,b):
     ''' _vetP(a,b)
         returns the vectorial products of a and b
-	a and b must be a 3-dim arrays
+        a and b must be a 3-dim arrays
     '''
     assert(len(a)==len(b)==3)
     a=numpy.array(a)
@@ -376,8 +377,8 @@ def _vetP(a,b):
 def _torsion(v1,v2,v3,v4):
     ''' _torsion(v1,v2,v3,v4)
         computes the torsion angles
-	around v2 and v3
-	given the 4 points
+        around v2 and v3
+        given the 4 points
         v1--v2--v3--v4
     '''
     e=numpy.array([[0.0]*3]*3) # the versors
@@ -414,7 +415,7 @@ class RESIDUE is defined as
    
    residueDistance(Residue,selfList=[],resList=[]) computing the
                  distance between another residue using all(default) or
-		 lists of atoms for each residue
+                 lists of atoms for each residue
 
 
 '''
@@ -440,25 +441,25 @@ class RESIDUE:
    def updateResidue(self,Coord,AtomNames, Others, ResName=None, Chain='', AltLoc=[]):
       ''' update the residue content using a list of 
           coordinates and a list of the corresponding
-	  atom names
+          atom names
       '''
       assert(len(Coord)==len(AtomNames))
       if(ResName!=None): 
           self.Name=ResName
-	  self.NameOne=_getResidueA1(ResName)
+          self.NameOne=_getResidueA1(ResName)
       self.AtomNumber += len(AtomNames)
       self.Chain=Chain
       self.AltLoc=AltLoc
       for i in range(len(Coord)):
           self.Coord.append(Coord[i])
-	  self.AtomNames.append(AtomNames[i])
-	  self.Others.append(Others[i])
+          self.AtomNames.append(AtomNames[i])
+          self.Others.append(Others[i])
 
    
    def residueDistance(self,Residue,selfList=[],resList=[]):
        ''' compute the euclidean distance
            from residue and residue using minimal distance
-	   among the atom in the residues
+           among the atom in the residues
        '''
        if (selfList == []) :
            selfList=self.AtomNames # set the current list to all possible
@@ -471,13 +472,13 @@ class RESIDUE:
        for i in selfList:
           if(i in self.AtomNames):     
              vi=numpy.array(self.Coord[self.AtomNames.index(i)],numpy.float)
-	     for j in resList:
+             for j in resList:
                 if(j in Residue.AtomNames):
                    vj=numpy.array(Residue.Coord[Residue.AtomNames.index(j)],numpy.float)
                    numpy.add(vi,-vj,vj)
                    currentDistance= numpy.sqrt(numpy.dot(vj,vj))
-	        if (currentDistance < minDistance):
-		   minDistance=currentDistance
+                if (currentDistance < minDistance):
+                   minDistance=currentDistance
        return minDistance
 
 #---- end class residue ----
@@ -491,14 +492,14 @@ class PDBChain:
        protLen => protein length
        __pdbPositions => label for eache residues in the
                       PDBChain that contains the 'number'
-		      assigned to the residues in the pdb file
-		      (it could be an alphanumeric es '123A')
+                      assigned to the residues in the pdb file
+                      (it could be an alphanumeric es '123A')
        __Residues => list of residues in the chain
-		 
+                 
       Constructor
       PDBChain(Positions,Residues)
          Positions => ['1','2',....,'123','123A',...]
-	 Residues  => [Residue1, Residue2,.., Residue123,...]
+         Residues  => [Residue1, Residue2,.., Residue123,...]
 
    '''
 
@@ -508,20 +509,20 @@ class PDBChain:
           Positions => an array containing the lists  
               example of Positions => ['1','2',....,'123','123A',...]
           Residues => array of residues
-	      example of Residues  => [Residue1, Residue2,.., Residue123,...]
+              example of Residues  => [Residue1, Residue2,.., Residue123,...]
        '''
        assert(len(Residues)==len(Positions))
        self.protLen=len(Positions)
        self.__pdbPositions=Positions
        self.__Residues=Residues
-	  
+          
    def updateChain(self,Position,Residue):
       ''' update the residue content using a 
           residue and a the corresponding
-	  positions
-	  if obj is a PDBChain object
-	  obj.(Pos,Res)
-	  add to the existing obj the residue Res with position Pos
+          positions
+          if obj is a PDBChain object
+          obj.(Pos,Res)
+          add to the existing obj the residue Res with position Pos
       '''
       self.protLen=self.protLen+1
       self.__pdbPositions.append(Position)
@@ -530,13 +531,13 @@ class PDBChain:
    def checkContinuity(self,CutOff=1.54,Atoms=['C','N'],minCutOff=0.5):
        ''' checkContinuity(CutOff=1.4,Atoms=['C','O'],minCutOff=0.5)
            tests if the bond distances between each
-	   hypotetically bonded residues is below a given
-	   threshold
+           hypotetically bonded residues is below a given
+           threshold
        '''
        Errors=[]
        for i in range(self.protLen-1):
            d=self.distance(i,i+1,Atoms,Atoms)
-	   if(d > CutOff or d < minCutOff):
+           if(d > CutOff or d < minCutOff):
               Errors.append([d,self.__pdbPositions[i],self.__pdbPositions[i+1]])
        return Errors
    
@@ -550,25 +551,25 @@ class PDBChain:
        Errors={}
        Text='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
        for i in range(self.protLen-1):
-	  if(self.__pdbPositions[i][-1].upper() in Text):     
-	     pi=string.atoi(self.__pdbPositions[i][0:-1])   
-	  else: 
-             pi=string.atoi(self.__pdbPositions[i])
-	  if(self.__pdbPositions[i+1][-1].upper() in Text):     
-             Stranges.append(self.__pdbPositions[i+1])		   
-	     pii=string.atoi(self.__pdbPositions[i+1][0:-1])   
-	  else: 
-             pii=string.atoi(self.__pdbPositions[i+1])
+          if(self.__pdbPositions[i][-1].upper() in Text):     
+             pi=int(self.__pdbPositions[i][0:-1])   
+          else: 
+             pi=int(self.__pdbPositions[i])
+          if(self.__pdbPositions[i+1][-1].upper() in Text):     
+             Stranges.append(self.__pdbPositions[i+1])                   
+             pii=int(self.__pdbPositions[i+1][0:-1])   
+          else: 
+             pii=int(self.__pdbPositions[i+1])
           if(pi  == pii):
-	     Repited.append([self.__pdbPositions[i],self.__pdbPositions[i+1]])	  
-	  elif(pi +1 != pii):
+             Repited.append([self.__pdbPositions[i],self.__pdbPositions[i+1]])          
+          elif(pi +1 != pii):
              Holes.append([self.__pdbPositions[i],self.__pdbPositions[i+1]])
-	  if(Holes !=[]):
+          if(Holes !=[]):
              Errors['Holes']=Holes
-	  if(Repited !=[]):
-	     Errors['Repited']=Repited
-	  if(Stranges!=[]):   
-	     Errors['Stranges']=Stranges
+          if(Repited !=[]):
+             Errors['Repited']=Repited
+          if(Stranges!=[]):   
+             Errors['Stranges']=Stranges
        return Errors
    
    def getPDBNumbers(self):
@@ -605,33 +606,33 @@ class PDBChain:
    def getPhiPsi(self,slice=[],inRadiants='Y'):
        ''' getPhiPsi(slice=[])
            return the list of the Phi and Psi
-	   torsion angles for each residue in slice
-	   if slice=[] returns all the residues in memory
-	   if inRadiants != 'Y' returns degree
-	   returns a list of len(slice)X2 ([phi,psi])
+           torsion angles for each residue in slice
+           if slice=[] returns all the residues in memory
+           if inRadiants != 'Y' returns degree
+           returns a list of len(slice)X2 ([phi,psi])
        '''
        if(slice==[]):
-           slice=range(self.protLen)
+           slice=list(range(self.protLen))
        PhiPsi=[]
        for i in slice:
-	   # Phi = C(i-1)-N(i)-CA(i)-C(i)
+           # Phi = C(i-1)-N(i)-CA(i)-C(i)
            if(i == 0):
-	       phi=360.0 # default value
+               phi=360.0 # default value
            else:
-	       v1=self.getCoordResAtom(i-1,'C')
+               v1=self.getCoordResAtom(i-1,'C')
                v2=self.getCoordResAtom(i,'N')
-	       v3=self.getCoordResAtom(i,'CA')
+               v3=self.getCoordResAtom(i,'CA')
                v4=self.getCoordResAtom(i,'C')
-	       phi=_torsion(v1,v2,v3,v4)
+               phi=_torsion(v1,v2,v3,v4)
            # Psi = N(i)-CA(i)-C(i)-N(i+1)
            if(i == self.protLen-1):
                psi=360.0 # default value
-	   else:
-	       v1=self.getCoordResAtom(i,'N')
+           else:
+               v1=self.getCoordResAtom(i,'N')
                v2=self.getCoordResAtom(i,'CA')
-	       v3=self.getCoordResAtom(i,'C')
+               v3=self.getCoordResAtom(i,'C')
                v4=self.getCoordResAtom(i+1,'N')
-	       psi=_torsion(v1,v2,v3,v4)
+               psi=_torsion(v1,v2,v3,v4)
            PhiPsi.append((phi,psi)) 
        PhiPsi=numpy.array(PhiPsi,numpy.float)
        if(inRadiants != 'Y'):
@@ -643,11 +644,11 @@ class PDBChain:
    def getCoordResAtom(self,i,Atom):
        ''' getCoordResAtom(i,Atom) 
            returns the coordinates of the 'Atom' in the
-	   residue 'i'
+           residue 'i'
        '''
        assert(0<=i<self.protLen)
        if(Atom in self.__Residues[i].AtomNames):
-	   coordPos=self.__Residues[i].AtomNames.index(Atom)    
+           coordPos=self.__Residues[i].AtomNames.index(Atom)    
            return   self.__Residues[i].Coord[coordPos]
        else:
            return None
@@ -696,28 +697,28 @@ class PDBChain:
        ''' getSequence(self, slice=[]) -> string of protein one-lettercode sequence
            Starting from the PDBChain, retrive a string that is the chain sequence.
            It could also retrive a sequence slice. If slice is not provided (default 
-           slice = []), the entire chain will be considered. 		
+           slice = []), the entire chain will be considered.                 
        '''
        if(slice == []): # if not provided use the whole Chain
-		slice=range(self.protLen)
+                slice=list(range(self.protLen))
        seq=''
        for i in slice:
-		if i in range(len(self.__Residues)):
-			seq+= self.__Residues[i].NameOne
+                if i in range(len(self.__Residues)):
+                        seq+= self.__Residues[i].NameOne
        return seq
 
    def getSequenceA3(self, slice=[]):
        ''' getSequenceA3(self, slice=[]) -> string of protein three-lettercode sequence
            Starting from the PDBChain, retrive a string that is the chain sequence.
            It could also retrive a sequence slice. If slice is not provided (default 
-           slice = []), the entire chain will be considered. 		
+           slice = []), the entire chain will be considered.                 
        '''
        if(slice == []): # if not provided use the whole Chain
-		slice=range(self.protLen)
+                slice=list(range(self.protLen))
        seq=[]
        for i in slice:
-		if i in range(len(self.__Residues)):
-			seq.append(self.__Residues[i].Name)
+                if i in range(len(self.__Residues)):
+                        seq.append(self.__Residues[i].Name)
        return seq
 
    def neighborList(self, threshold, tol=0, pdblist=[]):
@@ -726,7 +727,7 @@ class PDBChain:
            => return for each residue e list of neighbors 
        '''
        if not pdblist:
-           pdblist=range(self.protLen)
+           pdblist=list(range(self.protLen))
        coords=[[],[],[]] # x=0, y=1, z=2
        for i in pdblist: 
            coord_i=self.getCoordResAtom(i,'CA')
@@ -737,7 +738,7 @@ class PDBChain:
    def neighborPDBList(self, threshold, tol=0, pdblist=[]):
        ''' neighborPDBList(pdbChain, threshold, tol=0, pdblist=[])
            pdbChain is an instance of PDBChain
-	   pdblist are pdb labels
+           pdblist are pdb labels
            => return for each residue e list of neighbors 
        '''
        if not pdblist:
@@ -752,7 +753,7 @@ class PDBChain:
    def neighbors(self,th_dist,num_nn,pdblist=[]):
        ''' neighbors(self,th_dist,num_nn,pdblist=[])
            computes the neighbors of each residue in pdblist
-	   or in case pdblist=[] of the whole pdb
+           or in case pdblist=[] of the whole pdb
            The number of neighbors is num_nn
            The distance threshold cut-off is th_dist
            => returns the list [[neighbors of i]for each i in pdblist]
@@ -782,20 +783,20 @@ class PDBChain:
    def writePDB(self,fileName=None,slice=[],oldNumbers=None,chainName=' ',header='Y'):
        ''' writePDB(self,fileName=None,slice=[],oldNumbers=None,chainName=' ')
            write a pdb file coordinates using the existing
-	   protein in memory. 
-	   writePDB writes on <stdout> if a fileName is NOT provided (default)
-	   or on the given fileName.
-	   writePDB can also write only a slice (subset identified by the list
-	   of the number of the residue we want (default=[] => all 
-	   [0,1,..protLen])
-	   oldNumbers='Y' => the old label numbers for each residue are used
-	   chainName is set by default to ' ' 
+           protein in memory. 
+           writePDB writes on <stdout> if a fileName is NOT provided (default)
+           or on the given fileName.
+           writePDB can also write only a slice (subset identified by the list
+           of the number of the residue we want (default=[] => all 
+           [0,1,..protLen])
+           oldNumbers='Y' => the old label numbers for each residue are used
+           chainName is set by default to ' ' 
        '''
        resCount=1  # residue conter
        resLable="" # residue label "number"
        atomCount=1 # atom counter
        if(slice == []): # if not provided use the whole protein
-	    slice=range(self.protLen)
+            slice=list(range(self.protLen))
        strPrn="" # string to print
        if header=='Y' or header=='y':
           strPrn+= "%s %s\n" % ("HEADER ",fileName) # print header
@@ -809,43 +810,43 @@ class PDBChain:
                 if(i !=0) : strPrn+="\n" # and it is not == 0
                 strPrn+= "%s%4d %1.1s%5d  " % ("SEQRES",k,chainName,effProtLen)
                 k+=1
-             strPrn+= "%3s " % self.getResidue(slice[i]).Name	
+             strPrn+= "%3s " % self.getResidue(slice[i]).Name        
           strPrn+= "\n"
        # print ATOM fields
        for i in slice: # for each residue in the list
            currentResidue=self.getResidue(i)
            # if it is set to oldNumbers use them
            if(oldNumbers !=  None):
-	       resLabel=self.__pdbPositions[i]
-	   else :
+               resLabel=self.__pdbPositions[i]
+           else :
                resLabel=str(resCount)
-	   k=0
+           k=0
            if resLabel[-1] in '1234567890': resLabel=resLabel+' '
            for j in range(len(currentResidue.AtomNames)): # for each atom
               a=currentResidue.AtomNames[j]
               altloc=currentResidue.AltLoc[j]
               #strPrn+="ATOM%7d  %-4s%-4s%1.1s%4s    " % 
               strPrn+="ATOM  %5d  %-3s%1s%3s %1.1s%5s   " % \
-	            (atomCount,a,altloc,currentResidue.Name,chainName,resLabel)
-	      strPrn+="%8.3f%8.3f%8.3f" % tuple(currentResidue.Coord[k])
-	      strPrn+="%6s%6s" % tuple(currentResidue.Others[k])+14*' '+'\n'
-	      #strPrn+='  0.00  0.00'+14*' '+'\n'
+                    (atomCount,a,altloc,currentResidue.Name,chainName,resLabel)
+              strPrn+="%8.3f%8.3f%8.3f" % tuple(currentResidue.Coord[k])
+              strPrn+="%6s%6s" % tuple(currentResidue.Others[k])+14*' '+'\n'
+              #strPrn+='  0.00  0.00'+14*' '+'\n'
               k+=1
-	      atomCount+=1
-	   resCount+=1
+              atomCount+=1
+           resCount+=1
        strPrn+='TER\n'
        if(fileName == None):
-           print strPrn
+           print(strPrn)
        else:
            try: 
-	      f=open(fileName, 'w')
-	   except:
-              print "Can't open file ",fileName	   
+              f=open(fileName, 'w')
+           except:
+              print("Can't open file ",fileName)           
               sys.exit()
            f.write(strPrn)
-	   f.close()
-	   
-	   
+           f.close()
+           
+           
 #--- end class PDBChain
 
 # class PDBProtein 
@@ -854,103 +855,103 @@ class PDBProtein:
    class PDBProtein
        seqNum => Number of sequences
        __chainLabels => label for each PDBchain in the PDBChain that contains
-			the 'Label' (if exist), assigned to the  Chain in the 
-		        pdb file (it could be a letter or a number,  for over 
-			24 sequences proteins)
+                        the 'Label' (if exist), assigned to the  Chain in the 
+                        pdb file (it could be a letter or a number,  for over 
+                        24 sequences proteins)
        __Chains => list of PDBChains instances in the protein
-		 
+                 
       Constructor
       PDBProtein(Chains)
-	 Chains =>  [PDBChains1,PDBChains2,...,PDBChainsN]
+         Chains =>  [PDBChains1,PDBChains2,...,PDBChainsN]
    '''
 
    def __init__(self, Chains) :
-	'''
-	  __init__(Chains)
-	  Chains => array of Chains
-	      example of Chains => [PDBChains1,PDBChains2,...,PDBChainsN]
-	'''
-	self.__Chains=Chains
-	self.__chainLabels=self.getChains()
-	self.seqNum=len(self.__chainLabels)
-	self.resNum=0
-	for PCh in self.__Chains:
-		self.resNum+=PCh.protLen
+        '''
+          __init__(Chains)
+          Chains => array of Chains
+              example of Chains => [PDBChains1,PDBChains2,...,PDBChainsN]
+        '''
+        self.__Chains=Chains
+        self.__chainLabels=self.getChains()
+        self.seqNum=len(self.__chainLabels)
+        self.resNum=0
+        for PCh in self.__Chains:
+                self.resNum+=PCh.protLen
 
    def updateProtein(self, Chain):
-	''' update the Chains content using a PDbChain (the corresponding Label
-	    is retrived by the PDB.Chain.getChain() function. 
-	    if obj is a PDBProtein object obj.(Lab,Ch) add to the existing obj 
-	    the PDBChain Chain with label Label
-	'''
-	self.seqNum=self.seqNum+1
-	self.__chainLabels.append(Chain.getChain())
-	self.__Chains.append(Chain)
-	self.resNum=self.resNum+Chain.protLen
+        ''' update the Chains content using a PDbChain (the corresponding Label
+            is retrived by the PDB.Chain.getChain() function. 
+            if obj is a PDBProtein object obj.(Lab,Ch) add to the existing obj 
+            the PDBChain Chain with label Label
+        '''
+        self.seqNum=self.seqNum+1
+        self.__chainLabels.append(Chain.getChain())
+        self.__Chains.append(Chain)
+        self.resNum=self.resNum+Chain.protLen
 
    def getPDBChain(self,i):
-	'''Return i-th PDBChain instance'''
-	if i in range(len(self.__Chains)):
-		return self.__Chains[i]
-	else: return None
-	
+        '''Return i-th PDBChain instance'''
+        if i in range(len(self.__Chains)):
+                return self.__Chains[i]
+        else: return None
+        
    def getPDBChainByChain(self,ch):
-	'''Return the PDBChain instance whose Chain label is i '''
-	if ch in self.__chainLabels:
-		i = self.__chainLabels.index(ch)
-		return self.__Chains[i]
-	else: return None
-	
+        '''Return the PDBChain instance whose Chain label is i '''
+        if ch in self.__chainLabels:
+                i = self.__chainLabels.index(ch)
+                return self.__Chains[i]
+        else: return None
+        
    def getChains(self):
-	''' getChains() -> Return a list of the Protein Chains.
-	'''
-	chains=[]
-	for ch in self.__Chains:
-		chains.append(ch.getChain())
+        ''' getChains() -> Return a list of the Protein Chains.
+        '''
+        chains=[]
+        for ch in self.__Chains:
+                chains.append(ch.getChain())
         return chains
 
    def getSequences(self):
-	''' getSequences() -> Return a list of the Protein Sequences.'''
-	seqs=[]
-	for ch in self.__Chains:
-		seqs.append(ch.getSequence())
-	return seqs
+        ''' getSequences() -> Return a list of the Protein Sequences.'''
+        seqs=[]
+        for ch in self.__Chains:
+                seqs.append(ch.getSequence())
+        return seqs
 
 
    def getPDBNumbers(self, Chain=None):
        '''getPDBNumbers(self, Chain=None) -> List of PDB residue Labels
-	  return the list of the pdb numbers of each residue.
-	  If Chain is 'Y',  it  return  the  PDB Number  and its chain 
-	  (example ['1 A'] for the residue 1 of the chain A)
+          return the list of the pdb numbers of each residue.
+          If Chain is 'Y',  it  return  the  PDB Number  and its chain 
+          (example ['1 A'] for the residue 1 of the chain A)
        '''
        PDBNum = []
        for PCh in self.__Chains:
-		PDBNumCh=[]
-		PDBNumCh.extend(PCh.getPDBNumbers())
-		if Chain != None:
-			Ch = PCh.getResidue(0).Chain
-			for i in range(len(PDBNumCh)):
-				PDBNumCh[i]+=" "+Ch
-				PDBNumCh[i]=PDBNumCh[i].strip()
-		PDBNum.extend(PDBNumCh)
+                PDBNumCh=[]
+                PDBNumCh.extend(PCh.getPDBNumbers())
+                if Chain != None:
+                        Ch = PCh.getResidue(0).Chain
+                        for i in range(len(PDBNumCh)):
+                                PDBNumCh[i]+=" "+Ch
+                                PDBNumCh[i]=PDBNumCh[i].strip()
+                PDBNum.extend(PDBNumCh)
        return PDBNum
    
    def getResidueByNumber(self, PDBNum, Chain=None):
-	'''getResidueByNumber(self, PDBNum,Chain=None)-> PDB residue instance
-	   Return the Residue instance whose pdb number is PDBNum.
-	   For multiple chains objects, there may be not unique identifiers
-	   and so a Chain retrivial is possible. When Chain is not specified
-	   the function returns the first Residue whose pdb Number is PDBNum.
-	'''
-	if Chain:
-		if PDBNum in self.getPDBChainByChain(Chain).getPDBNumbers():
-		      return self.getPDBChainByChain(Chain).getResidueByNumber(PDBNum)
-		else: return None
-	else:
-		for PCh in self.__Chains:
-			if PDBNum in PCh.getPDBNumbers():
-				return PCh.getResidueByNumber(PDBNum)
-			else:   return None
+        '''getResidueByNumber(self, PDBNum,Chain=None)-> PDB residue instance
+           Return the Residue instance whose pdb number is PDBNum.
+           For multiple chains objects, there may be not unique identifiers
+           and so a Chain retrivial is possible. When Chain is not specified
+           the function returns the first Residue whose pdb Number is PDBNum.
+        '''
+        if Chain:
+                if PDBNum in self.getPDBChainByChain(Chain).getPDBNumbers():
+                      return self.getPDBChainByChain(Chain).getResidueByNumber(PDBNum)
+                else: return None
+        else:
+                for PCh in self.__Chains:
+                        if PDBNum in PCh.getPDBNumbers():
+                                return PCh.getResidueByNumber(PDBNum)
+                        else:   return None
 
    def distancePDBNumber(self,i,j,chain_i,chain_j,i_list=[],j_list=[]):
        ''' compute the eucliden distance between residues PDB positions i and j
@@ -959,10 +960,10 @@ class PDBProtein:
        '''
        Res_i=self.getPDBChainByChain(chain_i).getResidueByNumber(i)
        if not Res_i:
-           print "ERROR None",chain_i,i
+           print("ERROR None",chain_i,i)
        Res_j=self.getPDBChainByChain(chain_j).getResidueByNumber(j)
        if not Res_j:
-           print "ERROR None",chain_j,j
+           print("ERROR None",chain_j,j)
        return (Res_i.residueDistance(Res_j,i_list,j_list))
    
    def distance(self,i,j,chain_i,chain_j,i_list=[],j_list=[]):
@@ -1014,81 +1015,81 @@ class PDBProtein:
        return(patch1,patch2) 
 
    def writePDBProtein(self,fileName=None,slice=[],oldNumbers=None,header='Y'):
-      	''' writePDBProtein(self,fileName=None,slice=[],oldNumbers=None)
+        ''' writePDBProtein(self,fileName=None,slice=[],oldNumbers=None)
             write a pdb file coordinates using the existing
-	    protein in memory. 
-	    writePDB writes on <stdout> if a fileName is NOT provided (default)
-	    or on the given fileName.
-	    writePDB can also write only a slice (subset identified by the list
-	    of the Chain Labels we want to write (default=[] => all Chains)
-	    oldNumbers='Y' => the old label numbers for each residue are used
-       	'''
-	resCount=1  # residue counter
-       	resLable="" # residue label "number"
-       	atomCount=1 # atom counter
-       	if not(slice): # if not provided use the whole protein
-		slice=self.__chainLabels
-      	strPrn="" # string to print
+            protein in memory. 
+            writePDB writes on <stdout> if a fileName is NOT provided (default)
+            or on the given fileName.
+            writePDB can also write only a slice (subset identified by the list
+            of the Chain Labels we want to write (default=[] => all Chains)
+            oldNumbers='Y' => the old label numbers for each residue are used
+        '''
+        resCount=1  # residue counter
+        resLable="" # residue label "number"
+        atomCount=1 # atom counter
+        if not(slice): # if not provided use the whole protein
+                slice=self.__chainLabels
+                strPrn="" # string to print
         if header=='Y' or header=='y':
            strPrn+= "%s %s\n" % ("HEADER ",fileName) # print header
            strPrn+= "%s %s\n" % ("COMPND ",fileName) # print header
-	Seqres=""
-	Atom=""
-	# control chain lengths
-	effProtLen=[]
-	seqs=self.getSequences()
-	for seq in seqs:
-		effProtLen.append(len(seq))
-	for j in range(self.seqNum):
-	    ch = self.__chainLabels[j]
-	    if ch in slice:
-	        # print protein SEQRES fields
-	        k=1 # line counter for SEQRES fields
-	        # print SEQRES fields
-	        for i in range(effProtLen[j]):
-		   currentResidue=self.__Chains[j].getResidue(i)
-	           if(i%13 == 0): # add newline if the residue is %13
-		       if(i != 0) : Seqres+="\n" # and it is not == 0
-	               Seqres+= "%s%4d %1.1s%5d  " % ("SEQRES",k,ch,effProtLen[j])
-	               k+=1
-	           Seqres+= "%3s " % currentResidue.Name	
-	           # print ATOM fields
-	           # if it is set to oldNumbers use them
-	           if(oldNumbers):
-		       resLabel=self.__Chains[j].getPDBNumbers()[i]
-		   else:
-	               resLabel=str(resCount)
+        Seqres=""
+        Atom=""
+        # control chain lengths
+        effProtLen=[]
+        seqs=self.getSequences()
+        for seq in seqs:
+                effProtLen.append(len(seq))
+        for j in range(self.seqNum):
+            ch = self.__chainLabels[j]
+            if ch in slice:
+                # print protein SEQRES fields
+                k=1 # line counter for SEQRES fields
+                # print SEQRES fields
+                for i in range(effProtLen[j]):
+                   currentResidue=self.__Chains[j].getResidue(i)
+                   if(i%13 == 0): # add newline if the residue is %13
+                       if(i != 0) : Seqres+="\n" # and it is not == 0
+                       Seqres+= "%s%4d %1.1s%5d  " % ("SEQRES",k,ch,effProtLen[j])
+                       k+=1
+                   Seqres+= "%3s " % currentResidue.Name        
+                   # print ATOM fields
+                   # if it is set to oldNumbers use them
+                   if(oldNumbers):
+                       resLabel=self.__Chains[j].getPDBNumbers()[i]
+                   else:
+                       resLabel=str(resCount)
                    if resLabel[-1] in '1234567890': resLabel=resLabel+' '
-		   m=0
-	           for l in range(len(currentResidue.AtomNames)): # for each atom
+                   m=0
+                   for l in range(len(currentResidue.AtomNames)): # for each atom
                       a=currentResidue.AtomNames[l]
                       altloc=currentResidue.AltLoc[l]
                       Atom+="ATOM  %5d  %-3s%1s%3s %1.1s%5s   " % \
                           (atomCount,a,altloc,currentResidue.Name,ch,resLabel)
-	              #Atom+="ATOM%7d  %-4s%-4s%1.1s%4s    " % \
-		      #      (atomCount,a,currentResidue.Name,ch,resLabel)
-		      Atom+="%8.3f%8.3f%8.3f" % tuple(currentResidue.Coord[m])
-		      Atom+="%6s%6s" % tuple(currentResidue.Others[m])+14*' '+'\n'
-	              m+=1
-		      atomCount+=1
-		   resCount+=1 
-		Seqres+="\n"
+                      #Atom+="ATOM%7d  %-4s%-4s%1.1s%4s    " % \
+                      #      (atomCount,a,currentResidue.Name,ch,resLabel)
+                      Atom+="%8.3f%8.3f%8.3f" % tuple(currentResidue.Coord[m])
+                      Atom+="%6s%6s" % tuple(currentResidue.Others[m])+14*' '+'\n'
+                      m+=1
+                      atomCount+=1
+                   resCount+=1 
+                Seqres+="\n"
                 Atom+='TER\n'
-	if header=='Y' or header=='y':
+        if header=='Y' or header=='y':
            strPrn+=Seqres+Atom
         else:
-           strPrn+=Atom
-       	if(fileName == None):
-           	print strPrn
-       	else:
-           	try: 
-	      		f=open(fileName, 'w')
-	   	except:
-              		print "Can't open file ",fileName	   
-              		sys.exit()
-           	f.write(strPrn)
-	   	f.close()
-	   
+                strPrn+=Atom
+                if(fileName == None):
+                   print(strPrn)
+                else:
+                    try: 
+                               f=open(fileName, 'w')
+                    except:
+                               print("Can't open file ",fileName)           
+                               sys.exit()
+                    f.write(strPrn)
+                    f.close()
+           
 
 
 
@@ -1108,12 +1109,12 @@ def readPDBProtein(file,chain='_',AtomType=['C','N','O','CA','CB'],HetAtm='N'):
    
 #       while not eof
 #         se trovi Atom
-#	    se trovi chain e atomtype compatibile
-#	       se il residuo e' nuovo
-#	         appendi quello vecchio al pdb
-#		 inizializza il nuovo
-#	       altrimenti
-#	         appendi atomo e coordinate al vecchio
+#            se trovi chain e atomtype compatibile
+#               se il residuo e' nuovo
+#                 appendi quello vecchio al pdb
+#                 inizializza il nuovo
+#               altrimenti
+#                 appendi atomo e coordinate al vecchio
    
    lines = open(file).readlines()
    ChainRead=0      #  this means that the chain has not been read
@@ -1132,75 +1133,75 @@ def readPDBProtein(file,chain='_',AtomType=['C','N','O','CA','CB'],HetAtm='N'):
    already_done = []
    ter=0
    if HetAtm!='Y' and HetAtm!='y':
-	atype=['ATOM','TER']
+        atype=['ATOM','TER']
    else:
         atype=['ATOM','HETATM','TER']
    for line in lines:
-      record=string.strip(line[:6])
+      record=line[:6].strip()
       if ( record in atype ):
-	if record=='TER':
-		ter =1
-	else:
-		rchainold=rchain
-        	rchain=line[21]  # current chain
-	if rchainold!=rchain and rchain!=' ': ter = 0
-	if keepchain != '!': rchainold = keepchain # for already_done chains problems
-	if ( (rchain in chain) or (rchain in chain[0]) or (chain[0] == '_') ) and ter==0:
-	  ChainRead=1
-          atom_name=string.strip(line[13:16]) # current atom name
-	  if(atom_name in AtomType):
-            res_name=string.strip(line[17:20]) # residue
+        if record=='TER':
+                ter =1
+        else:
+                rchainold=rchain
+                rchain=line[21]  # current chain
+        if rchainold!=rchain and rchain!=' ': ter = 0
+        if keepchain != '!': rchainold = keepchain # for already_done chains problems
+        if ( (rchain in chain) or (rchain in chain[0]) or (chain[0] == '_') ) and ter==0:
+          ChainRead=1
+          atom_name=line[13:16].strip() # current atom name
+          if(atom_name in AtomType):
+            res_name=line[17:20].strip() # residue
             altloc=line[16]       # alternative location
-	    resNum=string.strip(line[22:27])  # current residue number
-            x=string.atof(line[30:38]) # current x
-            y=string.atof(line[38:46]) # current y 
-            z=string.atof(line[46:54]) # current z
-	    try:
-            	occ=string.strip(line[54:60])
-	    except:
-		occ='  0.00'
-	    try:
-	    	tfac=string.strip(line[60:66])
-	    except:
-		tfac='  0.00'
-	    if (resNum+" "+rchain+" "+atom_name).strip() not in already_done:
-	      if(oldNum != (resNum+rchain).strip()):  # residue read != old number
+            resNum=line[22:27].strip()  # current residue number
+            x=float(line[30:38]) # current x
+            y=float(line[38:46]) # current y 
+            z=float(line[46:54]) # current z
+            try:
+               occ=line[54:60].strip()
+            except:
+               occ='  0.00'
+            try:
+               tfac=line[60:66].strip()
+            except:
+               tfac='  0.00'
+            if (resNum+" "+rchain+" "+atom_name).strip() not in already_done:
+              if(oldNum != (resNum+rchain).strip()):  # residue read != old number
                  if(oldNum != -99999): # this is for the first residue and first atom
                     residue.updateResidue(atom_coord,atom_type,atom_others,None,rchainold,atom_altloc)
-	            pdb.updateChain(resNumold,residue)
+                    pdb.updateChain(resNumold,residue)
                     atom_coord=[]    #  positions
                     atom_type=[]     #  type of atom
-		    atom_altloc=[]   #  alternative location
+                    atom_altloc=[]   #  alternative location
                     atom_others=[]   #  occupancy and T-Factor
-		 if (old_chain != rchain) and (old_chain != '!'): # take in account also the first chain
-	    	    pdbProt.updateProtein(pdb)
-		    ProtChains=pdbProt.getChains()
-		    if rchain in ProtChains: # reload the correct chain to upgrade
-		      pdb=pdbProt._PDBProtein__Chains[ProtChains.index(rchain)]
-		      pdblen=pdb.protLen	
-		      pdbProt._PDBProtein__Chains.pop(ProtChains.index(rchain))
-		      pdbProt._PDBProtein__chainLabels.pop(ProtChains.index(rchain))
-		      pdbProt.seqNum-=1
-		      pdbProt.resNum-=pdblen
-		    else:
-	    	      pdb=PDBChain([],[]) # reinit the new chain
-		 old_chain = rchain
-	         residue=RESIDUE(res_name,[],[],[]) # init the residue
+                 if (old_chain != rchain) and (old_chain != '!'): # take in account also the first chain
+                    pdbProt.updateProtein(pdb)
+                    ProtChains=pdbProt.getChains()
+                    if rchain in ProtChains: # reload the correct chain to upgrade
+                      pdb=pdbProt._PDBProtein__Chains[ProtChains.index(rchain)]
+                      pdblen=pdb.protLen        
+                      pdbProt._PDBProtein__Chains.pop(ProtChains.index(rchain))
+                      pdbProt._PDBProtein__chainLabels.pop(ProtChains.index(rchain))
+                      pdbProt.seqNum-=1
+                      pdbProt.resNum-=pdblen
+                    else:
+                      pdb=PDBChain([],[]) # reinit the new chain
+                 old_chain = rchain
+                 residue=RESIDUE(res_name,[],[],[]) # init the residue
                  atom_coord.append([x,y,z])
                  atom_type.append(atom_name)
                  atom_altloc.append(altloc)   
-		 atom_others.append([occ,tfac])
+                 atom_others.append([occ,tfac])
               else:   
-	         atom_coord.append([x,y,z])
-	         atom_type.append(atom_name)
+                 atom_coord.append([x,y,z])
+                 atom_type.append(atom_name)
                  atom_altloc.append(altloc)
-		 atom_others.append([occ,tfac])
-	      oldNum=(resNum+rchain).strip()
-	      resNumold=resNum
-	      already_done.append((resNum+" "+rchain+" "+atom_name).strip())
-	      keepchain='!'
-	    else:
-	      keepchain = rchainold
+                 atom_others.append([occ,tfac])
+              oldNum=(resNum+rchain).strip()
+              resNumold=resNum
+              already_done.append((resNum+" "+rchain+" "+atom_name).strip())
+              keepchain='!'
+            else:
+              keepchain = rchainold
    if keepchain != '!': rchain = keepchain # for already_done chains problems
    if(atom_type !=[]) and (ChainRead == 1):
       residue.updateResidue(atom_coord,atom_type,atom_others,None,rchain,atom_altloc) # for the last atom type(important: use rchain and not rchainold)
@@ -1226,12 +1227,12 @@ def readPDB(file,chain='_',AtomType=['C','N','O','CA','CB'],HetAtm='Y'):
    
 #       while not eof
 #         se trovi Atom
-#	    se trovi chain e atomtype compatibile
-#	       se il residuo e' nuovo
-#	         appendi quello vecchio al pdb
-#		 inizializza il nuovo
-#	       altrimenti
-#	         appendi atomo e coordinate al vecchio
+#            se trovi chain e atomtype compatibile
+#               se il residuo e' nuovo
+#                 appendi quello vecchio al pdb
+#                 inizializza il nuovo
+#               altrimenti
+#                 appendi atomo e coordinate al vecchio
    
    lines = open(file).readlines()
    ChainRead=0      #  this means that the chain it has not been read
@@ -1244,51 +1245,52 @@ def readPDB(file,chain='_',AtomType=['C','N','O','CA','CB'],HetAtm='Y'):
    oldNum=-99999      
    pdb=PDBChain([],[])        # init pdbchain
    if HetAtm!='Y' and HetAtm!='y':
-	atype=['ATOM','TER']
+        atype=['ATOM','TER']
    else:
         atype=['ATOM','HETATM','TER']
    for line in lines:
-      record=string.strip(line[:6])
+      record=line[:6].strip()
       if(ChainRead and record =='TER'):
          break
+      if len(line)<54: continue
       if (record in atype):
          rchain=line[21]  # current chain
-         atom_name=string.strip(line[13:16]) # current atom name
-	 if((rchain==chain or chain =='_')and(atom_name in AtomType)):
-	    ChainRead=1 # the chain it has beeen read
+         atom_name=line[13:16].strip() # current atom name
+         if((rchain==chain or chain =='_')and(atom_name in AtomType)):
+            ChainRead=1 # the chain it has beeen read
             altloc=line[16]       # alternative location
-            res_name=string.strip(line[17:20]) # residue
-	    resNum=string.strip(line[22:27])  # current residue number
-            x=string.atof(line[30:38]) # current x
-            y=string.atof(line[38:46]) # current y 
-            z=string.atof(line[46:54]) # current z
-	    try:
-	    	occ=string.strip(line[54:60])
-	    except:
-		occ='  0.00'
-	    try:
-		tfac=string.strip(line[60:66])
-	    except:
-		tfac='  0.00'
-	    if(oldNum != resNum):  # residue read != old number
+            res_name=line[17:20].strip() # residue
+            resNum=line[22:27].strip()  # current residue number
+            x=float(line[30:38]) # current x
+            y=float(line[38:46]) # current y 
+            z=float(line[46:54]) # current z
+            try:
+                occ=line[54:60].strip()
+            except:
+                occ='  0.00'
+            try:
+                tfac=line[60:66].strip()
+            except:
+                tfac='  0.00'
+            if(oldNum != resNum):  # residue read != old number
                if(oldNum != -99999): # this is the first residue
                   residue.updateResidue(atom_coord,atom_type,atom_others,None,rchain,atom_altloc)   
-	          pdb.updateChain(oldNum,residue)
+                  pdb.updateChain(oldNum,residue)
                   atom_coord=[]    #  positions
                   atom_type=[]     #  type of atom
-		  atom_others=[]   #  occupancy and T-Factor
+                  atom_others=[]   #  occupancy and T-Factor
                   atom_altloc=[]   #  alternative location
-	       residue=RESIDUE(res_name,[],[],[]) # init the residue
+               residue=RESIDUE(res_name,[],[],[]) # init the residue
                atom_coord.append([x,y,z])
                atom_type.append(atom_name)
-	       atom_others.append([occ,tfac])
+               atom_others.append([occ,tfac])
                atom_altloc.append(altloc)
             else:   
-	       atom_coord.append([x,y,z])
-	       atom_type.append(atom_name)
-	       atom_others.append([occ,tfac])
+               atom_coord.append([x,y,z])
+               atom_type.append(atom_name)
+               atom_others.append([occ,tfac])
                atom_altloc.append(altloc)
-	    oldNum=resNum
+            oldNum=resNum
    if(atom_type !=[]):
       residue.updateResidue(atom_coord,atom_type,atom_others,None,rchain,atom_altloc)
       pdb.updateChain(oldNum,residue)
@@ -1300,7 +1302,7 @@ def readPDB(file,chain='_',AtomType=['C','N','O','CA','CB'],HetAtm='Y'):
 
 if (__name__ == '__main__'):
    if(len(sys.argv) == 1):
-      print "syntax prog inputfile [chain]"
+      print("syntax prog inputfile [chain]")
 #       z=readPDBProtein('/home/emidio/skype/p3.pdb','_',TotAtomType)
 #       z.writePDBProtein('p4.pdb',[],'Y''Y')
 #       z=readPDB('/home/emidio/skype/pdb1aac.ent','_',TotAtomType)
@@ -1311,12 +1313,13 @@ if (__name__ == '__main__'):
       try:
          if(len(sys.argv)>=3):
             Protein = readPDB(sys.argv[1],sys.argv[2],['CA','O','C','N'])
-         else:	
+         else:        
             Protein = readPDBCA(sys.argv[1])
-      except IOError, (errno, strerror):
-         print "I/O error(%s): %s" % (errno, strerror)
+      except IOError as xxx_todo_changeme:
+         (errno, strerror) = xxx_todo_changeme.args
+         print("I/O error(%s): %s" % (errno, strerror))
 
-      print Protein.protLen
-      print Protein.checkContinuity()
+      print(Protein.protLen)
+      print(Protein.checkContinuity())
 
 

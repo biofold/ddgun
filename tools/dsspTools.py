@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # 
-
+from __future__ import print_function
 import sys
 
 Norm_Acc={"A" :106.0,  "B" :160.0,         # D or N 
@@ -30,13 +30,13 @@ def readDSSP(file,chain='_'):
    for line in lines[l+1:]:
       rchain=line[11]  # current chain
       if(rchain==chain or chain =='_'):
-            resName=string.strip(line[13]) # residue
+            resName=line[13].strip() # residue
             if resName.islower(): #cysteines
-	        resName='C'
-            resNum=string.strip(line[5:11])  # current residue number
+                resName='C'
+            resNum=line[5:11].strip()  # current residue number
             resSS=line[16]
-            resAcc=string.atoi(line[34:38])
-	    resAngle=(float(string.strip(line[103:109])),float(string.strip(line[109:114])))
+            resAcc=int(line[34:38])
+            resAngle=(float(line[103:109].strip()),float(line[109:114].strip()))
             dssp.append([resName,resNum,resSS,resAcc,resAngle])
    return dssp 
 
@@ -68,25 +68,25 @@ def getSS(dsspfile, chain='_', ssUsed=['H','E']):
     return ss
 
 def getAccfromNumbers(dsspfile,chain='_', th_acc=0):
-	''' getAccfromNumbers(dsspfile,chain='_', th_acc=0)
-	    returns an hash pdbNumber: [resName, resAcc, relAcc]
+        ''' getAccfromNumbers(dsspfile,chain='_', th_acc=0)
+            returns an hash pdbNumber: [resName, resAcc, relAcc]
         '''
-	dsspcontent=accNormList(dsspfile, chain, th_acc=0)
-	hashAccNorm={}
-	for resName,resNum,resSS,resAcc,relAcc in dsspcontent:
-		hashAccNorm[resNum]=[resName,resAcc,relAcc]
-	return hashAccNorm
+        dsspcontent=accNormList(dsspfile, chain, th_acc=0)
+        hashAccNorm={}
+        for resName,resNum,resSS,resAcc,relAcc in dsspcontent:
+                hashAccNorm[resNum]=[resName,resAcc,relAcc]
+        return hashAccNorm
 
 def getPhiPsi(dsspfile,chain='_'):
-	''' getPhiPsi(dsspfile, chain='_')
-	    return a list of tuple of Phi and Psi angle
-	'''
-	dsspcontent=readDSSP(dsspfile,chain)
-	angle=[]
-	for resName,resNum,resSS,resAcc,resAngle in dsspcontent:
-		angle.append(resAngle)
-	return angle
-		    
+        ''' getPhiPsi(dsspfile, chain='_')
+            return a list of tuple of Phi and Psi angle
+        '''
+        dsspcontent=readDSSP(dsspfile,chain)
+        angle=[]
+        for resName,resNum,resSS,resAcc,resAngle in dsspcontent:
+                angle.append(resAngle)
+        return angle
+                    
 
 def accNormList(dsspfile, chain='_', th_acc=0):
     ''' accNormList(dsspfile, chain, th_acc=0)
@@ -95,32 +95,33 @@ def accNormList(dsspfile, chain='_', th_acc=0):
     dsspcontent=readDSSP(dsspfile,chain)
     accreturn=[]
     for resName,resNum,resSS,resAcc,resAngle in dsspcontent:
-	if resName!='!':
-        	relAcc=int(100.0*resAcc/Norm_Acc[resName]+0.5)
-        	relAcc=min(100,relAcc)
-        	if relAcc>=th_acc:
-	   		accreturn.append([resName,resNum,resSS,resAcc,relAcc])
+        if resName!='!':
+                relAcc=int(100.0*resAcc/Norm_Acc[resName]+0.5)
+                relAcc=min(100,relAcc)
+                if relAcc>=th_acc:
+                           accreturn.append([resName,resNum,resSS,resAcc,relAcc])
     return accreturn
     
 
 # leggi il file dssp
 if __name__=='__main__':
     if(len(sys.argv) == 1):
-        print "syntax :",sys.argv[0]," dsspfile [chain]"
+        print("syntax :",sys.argv[0]," dsspfile [chain]")
         sys.exit()
     else:
         try:
             if(len(sys.argv)>=3):
-	        chain=sys.argv[2]
-            else:	
-	        chain='_'     
+                chain=sys.argv[2]
+            else:        
+                chain='_'     
             Protein = readDSSP(sys.argv[1],chain)
-        except IOError, (errno, strerror):
-            print sys.argv[1]
-            print "I/O error(%s): %s" % (errno, strerror)
-	
+        except IOError as xxx_todo_changeme:
+            (errno, strerror) = xxx_todo_changeme.args
+            print(sys.argv[1])
+            print("I/O error(%s): %s" % (errno, strerror))
+        
     for i in Protein:
-        print i
+        print(i)
     
 #    acc= accNormList(sys.argv[1],chain,th_acc=16)
 #    for i in acc:

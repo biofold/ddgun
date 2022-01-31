@@ -3,8 +3,8 @@ Match_columns 76
 No_of_seqs    1188 out of 11378
 Neff          9.94146
 Searched_HMMs 8888
-Date          Sun Mar 14 19:38:36 2021
-Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2018_08/uniclust30_2018_08 -i test/1aar.pdb.A.fasta -opsi /tmp/tmpbjXZ3H/1aar.pdb.A.fasta.blastx -n 2 -cpu 4 
+Date          Mon Jan 31 14:28:19 2022
+Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2018_08/uniclust30_2018_08 -i test/1aar.pdb.A.fasta -opsi /tmp/tmpIojpPF/1aar.pdb.A.fasta.blastx -n 2 -cpu 4 
 
  No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
   1 tr|A0A0C2C591|A0A0C2C591_9BILA 100.0 1.9E-35 6.3E-41  151.7   0.0   76    1-76      1-76  (92)
@@ -199,8 +199,8 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 190 tr|Q7XBP6|Q7XBP6_BIGNA Ubiquit  99.9 3.6E-27 1.1E-32  131.9   0.0   76    1-76      3-78  (221)
 191 tr|A0A287TE62|A0A287TE62_HORVV  99.9 3.8E-27 1.2E-32  133.2   0.0   76    1-76     77-152 (240)
 192 tr|A0CI21|A0CI21_PARTE Unchara  99.9 3.8E-27 1.2E-32  135.0   0.0   76    1-76      1-76  (271)
-193 tr|R1DZ00|R1DZ00_EMIHU Unchara  99.9 4.1E-27 1.3E-32  134.0   0.0   76    1-76      1-76  (256)
-194 tr|R1DZ00|R1DZ00_EMIHU Unchara  99.9 4.1E-27 1.3E-32  134.0   0.0   76    1-76     77-152 (256)
+193 tr|R1DZ00|R1DZ00_EMIHU Unchara  99.9 4.1E-27 1.3E-32  134.0   0.0   76    1-76     77-152 (256)
+194 tr|R1DZ00|R1DZ00_EMIHU Unchara  99.9 4.1E-27 1.3E-32  134.0   0.0   76    1-76      1-76  (256)
 195 tr|K0SPB7|K0SPB7_THAOC Unchara  99.9 4.1E-27 1.3E-32  133.0   0.0   76    1-76    164-239 (240)
 196 tr|S5N958|S5N958_9ABAC Ubiquit  99.9 5.2E-27 1.6E-32  126.7   0.0   76    1-76      1-76  (167)
 197 tr|Q0WRN6|Q0WRN6_ARATH Polyubi  99.9 5.2E-27 1.7E-32  143.5   0.0   76    1-76    198-273 (351)
@@ -263,8 +263,8 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 254 tr|A0A0P5W2X7|A0A0P5W2X7_9CRUS  99.9 4.4E-26 1.4E-31  132.2   0.0   75    1-75    132-206 (298)
 255 tr|A0A2P5W1B3|A0A2P5W1B3_GOSBA  99.9 4.4E-26 1.4E-31  134.3   0.0   76    1-76      1-76  (347)
 256 tr|A0A084G0X0|A0A084G0X0_9PEZI  99.9 4.5E-26 1.4E-31  129.8   0.0   76    1-76    128-203 (255)
-257 tr|Q9WR81|Q9WR81_9FLAV Polypro  99.9 4.6E-26 1.4E-31  137.1   0.0   76    1-76    224-299 (432)
-258 tr|Q9WR81|Q9WR81_9FLAV Polypro  99.9 4.6E-26 1.4E-31  137.1   0.0   76    1-76    300-375 (432)
+257 tr|Q9WR81|Q9WR81_9FLAV Polypro  99.9 4.6E-26 1.4E-31  137.1   0.0   76    1-76    300-375 (432)
+258 tr|Q9WR81|Q9WR81_9FLAV Polypro  99.9 4.6E-26 1.4E-31  137.1   0.0   76    1-76    224-299 (432)
 259 tr|A0A0G4LD50|A0A0G4LD50_9PEZI  99.9 4.5E-26 1.4E-31  148.9   0.0   71    1-71    104-174 (886)
 260 tr|A0A2S4PQB2|A0A2S4PQB2_9PEZI  99.9 4.8E-26 1.5E-31  132.6   0.0   76    1-76    158-233 (312)
 261 tr|A0A072PCN0|A0A072PCN0_9EURO  99.9 5.1E-26 1.6E-31  126.4   0.0   75    2-76     81-155 (207)
@@ -290,8 +290,8 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 281 tr|A0A2T0ADK2|A0A2T0ADK2_RHOTO  99.9 8.4E-26 2.6E-31  131.8   0.0   76    1-76    162-237 (315)
 282 tr|A0A1L9RXE3|A0A1L9RXE3_ASPWE  99.9 8.5E-26 2.7E-31  109.3   0.0   64    4-67      1-64  (73)
 283 tr|A0A0P5W2X7|A0A0P5W2X7_9CRUS  99.9 8.9E-26 2.8E-31  130.9   0.0   76    1-76     56-131 (298)
-284 tr|A0DBT3|A0DBT3_PARTE Unchara  99.9   9E-26 2.8E-31  133.4   0.0   76    1-76     50-125 (358)
-285 tr|A0DBT3|A0DBT3_PARTE Unchara  99.9   9E-26 2.8E-31  133.4   0.0   76    1-76    198-273 (358)
+284 tr|A0DBT3|A0DBT3_PARTE Unchara  99.9   9E-26 2.8E-31  133.4   0.0   76    1-76    198-273 (358)
+285 tr|A0DBT3|A0DBT3_PARTE Unchara  99.9   9E-26 2.8E-31  133.4   0.0   76    1-76     50-125 (358)
 286 tr|A0A0P6I2V8|A0A0P6I2V8_9CRUS  99.9   9E-26 2.8E-31  125.4   0.0   76    1-76     88-163 (207)
 287 tr|X6L731|X6L731_RETFI Polyubi  99.9 8.6E-26 2.9E-31  136.4   0.0   76    1-76     45-120 (275)
 288 tr|F1LBR8|F1LBR8_ASCSU Polyubi  99.9 9.4E-26 2.9E-31  133.8   0.0   76    1-76      1-76  (354)
@@ -322,13 +322,13 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 313 tr|R1DXQ4|R1DXQ4_EMIHU Unchara  99.9 2.8E-25 8.8E-31  111.3   0.0   75    1-75      1-75  (99)
 314 tr|X8JC86|X8JC86_9HOMO Ubiquit  99.9 2.9E-25 8.9E-31  134.9   0.0   76    1-76    315-390 (473)
 315 tr|A0A0L6ULP7|A0A0L6ULP7_9BASI  99.9   3E-25 9.4E-31  130.1   0.0   76    1-76    160-235 (312)
-316 tr|A0A0P5EBU9|A0A0P5EBU9_9CRUS  99.9 3.1E-25 9.6E-31  135.0   0.0   76    1-76     77-152 (481)
-317 tr|A0A0P5EBU9|A0A0P5EBU9_9CRUS  99.9 3.1E-25 9.6E-31  135.0   0.0   76    1-76    229-304 (481)
+316 tr|A0A0P5EBU9|A0A0P5EBU9_9CRUS  99.9 3.1E-25 9.6E-31  135.0   0.0   76    1-76    229-304 (481)
+317 tr|A0A0P5EBU9|A0A0P5EBU9_9CRUS  99.9 3.1E-25 9.6E-31  135.0   0.0   76    1-76     77-152 (481)
 318 tr|B7QKH6|B7QKH6_IXOSC Ubiquit  99.9 3.1E-25 9.9E-31  111.7   0.0   74    3-76      1-74  (90)
 319 tr|B0DPY8|B0DPY8_LACBS Predict  99.8 3.2E-25   1E-30  107.6   0.0   76    1-76      1-76  (76)
 320 tr|A0A1D6CD30|A0A1D6CD30_WHEAT  99.8 3.3E-25   1E-30  128.5   0.0   76    1-76    216-291 (292)
-321 tr|A0A2P2EL59|A0A2P2EL59_9EURO  99.8 3.4E-25 1.1E-30  129.4   0.0   76    1-76     77-152 (317)
-322 tr|A0A2P2EL59|A0A2P2EL59_9EURO  99.8 3.4E-25 1.1E-30  129.4   0.0   76    1-76      1-76  (317)
+321 tr|A0A2P2EL59|A0A2P2EL59_9EURO  99.8 3.4E-25 1.1E-30  129.4   0.0   76    1-76      1-76  (317)
+322 tr|A0A2P2EL59|A0A2P2EL59_9EURO  99.8 3.4E-25 1.1E-30  129.4   0.0   76    1-76     77-152 (317)
 323 tr|X6MMU8|X6MMU8_RETFI Polyubi  99.8 3.6E-25 1.1E-30  125.4   0.0   74    3-76     86-159 (240)
 324 tr|A0A2B7Z8F8|A0A2B7Z8F8_9EURO  99.8 3.6E-25 1.1E-30  122.8   0.0   74    3-76     58-131 (203)
 325 tr|A0A2I2YNG4|A0A2I2YNG4_GORGO  99.8 3.7E-25 1.2E-30  125.4   0.0   76    1-76     67-142 (208)
@@ -348,24 +348,24 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 339 tr|I1QPX9|I1QPX9_ORYGL Unchara  99.8 5.8E-25 1.8E-30  135.3   0.0   76    1-76    399-474 (543)
 340 tr|M1JNQ9|M1JNQ9_NPVSL Ubiquit  99.8 5.8E-25 1.8E-30  129.3   0.0   76    1-76      1-76  (337)
 341 tr|A0A287TMZ8|A0A287TMZ8_HORVV  99.8 5.8E-25 1.9E-30  139.2   0.0   76    1-76    372-447 (448)
-342 tr|M8AJB6|M8AJB6_TRIUA Polyubi  99.8 6.3E-25 1.9E-30  133.1   0.0   76    1-76    382-457 (458)
-343 tr|M8AJB6|M8AJB6_TRIUA Polyubi  99.8 6.3E-25 1.9E-30  133.1   0.0   76    1-76    306-381 (458)
+342 tr|M8AJB6|M8AJB6_TRIUA Polyubi  99.8 6.3E-25 1.9E-30  133.1   0.0   76    1-76    306-381 (458)
+343 tr|M8AJB6|M8AJB6_TRIUA Polyubi  99.8 6.3E-25 1.9E-30  133.1   0.0   76    1-76    382-457 (458)
 344 tr|M8AJB6|M8AJB6_TRIUA Polyubi  99.8 6.3E-25 1.9E-30  133.1   0.0   76    1-76    230-305 (458)
 345 tr|A0A1Y2H5S9|A0A1Y2H5S9_9FUNG  99.8 6.3E-25 1.9E-30  125.4   0.0   76    1-76     10-85  (258)
 346 tr|A0A061RMC9|A0A061RMC9_9CHLO  99.8 6.4E-25   2E-30  113.6   0.0   76    1-76     35-110 (112)
-347 tr|A0A0V0Z8R1|A0A0V0Z8R1_9BILA  99.8   7E-25 2.2E-30  137.2   0.0   76    1-76    310-385 (628)
+347 tr|A0A0V0Z8R1|A0A0V0Z8R1_9BILA  99.8   7E-25 2.2E-30  137.2   0.0   76    1-76    386-461 (628)
 348 tr|A0A0V0Z8R1|A0A0V0Z8R1_9BILA  99.8   7E-25 2.2E-30  137.2   0.0   76    1-76     12-87  (628)
-349 tr|A0A0V0Z8R1|A0A0V0Z8R1_9BILA  99.8   7E-25 2.2E-30  137.2   0.0   76    1-76    386-461 (628)
+349 tr|A0A0V0Z8R1|A0A0V0Z8R1_9BILA  99.8   7E-25 2.2E-30  137.2   0.0   76    1-76    310-385 (628)
 350 tr|A0A0V0TBS0|A0A0V0TBS0_9BILA  99.8 8.1E-25 2.5E-30  140.4   0.0   76    1-76    153-228 (816)
 351 tr|A0A0C9TRC2|A0A0C9TRC2_PAXIN  99.8 8.5E-25 2.7E-30  136.9   0.0   75    2-76    224-298 (510)
 352 tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI  99.8 9.2E-25 2.8E-30  137.5   0.0   76    1-76    496-571 (724)
-353 tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI  99.8 9.2E-25 2.8E-30  137.5   0.0   76    1-76    572-647 (724)
-354 tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI  99.8 9.2E-25 2.8E-30  137.5   0.0   76    1-76    648-723 (724)
+353 tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI  99.8 9.2E-25 2.8E-30  137.5   0.0   76    1-76    648-723 (724)
+354 tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI  99.8 9.2E-25 2.8E-30  137.5   0.0   76    1-76    572-647 (724)
 355 tr|A0A226BJL9|A0A226BJL9_CRYNV  99.8 9.1E-25 2.9E-30  130.8   0.0   76    1-76    189-264 (341)
 356 tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA  99.8 9.3E-25 2.9E-30  131.0   0.0   76    1-76    107-182 (411)
-357 tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA  99.8 9.3E-25 2.9E-30  131.0   0.0   76    1-76    183-258 (411)
-358 tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA  99.8 9.3E-25 2.9E-30  131.0   0.0   76    1-76    259-334 (411)
-359 tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA  99.8 9.3E-25 2.9E-30  131.0   0.0   76    1-76    335-410 (411)
+357 tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA  99.8 9.3E-25 2.9E-30  131.0   0.0   76    1-76    335-410 (411)
+358 tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA  99.8 9.3E-25 2.9E-30  131.0   0.0   76    1-76    183-258 (411)
+359 tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA  99.8 9.3E-25 2.9E-30  131.0   0.0   76    1-76    259-334 (411)
 360 tr|A0A1I0VAF0|A0A1I0VAF0_9BACL  99.8 9.5E-25   3E-30  135.4   0.0   73    1-73     30-102 (516)
 361 tr|E9EFI5|E9EFI5_METAQ Polyubi  99.8 9.7E-25   3E-30  123.9   0.0   74    3-76    120-193 (245)
 362 tr|R1DKZ4|R1DKZ4_EMIHU Unchara  99.8 9.7E-25   3E-30  119.5   0.0   76    1-76      1-76  (182)
@@ -388,8 +388,8 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 379 tr|A0A0E0B4J9|A0A0E0B4J9_9ORYZ  99.8 1.7E-24 5.3E-30  136.2   0.0   76    1-76    232-307 (713)
 380 tr|A0A2P6THD4|A0A2P6THD4_CHLSO  99.8 1.8E-24 5.7E-30  137.9   0.0   76    1-76      1-76  (858)
 381 tr|A0A0K6FM12|A0A0K6FM12_9HOMO  99.8 1.9E-24 5.8E-30  135.5   0.0   76    1-76    423-498 (651)
-382 tr|A0A0K6FM12|A0A0K6FM12_9HOMO  99.8 1.9E-24 5.8E-30  135.5   0.0   76    1-76    575-650 (651)
-383 tr|A0A0K6FM12|A0A0K6FM12_9HOMO  99.8 1.9E-24 5.8E-30  135.5   0.0   76    1-76    499-574 (651)
+382 tr|A0A0K6FM12|A0A0K6FM12_9HOMO  99.8 1.9E-24 5.8E-30  135.5   0.0   76    1-76    499-574 (651)
+383 tr|A0A0K6FM12|A0A0K6FM12_9HOMO  99.8 1.9E-24 5.8E-30  135.5   0.0   76    1-76    575-650 (651)
 384 tr|A0A0M3I5J9|A0A0M3I5J9_ASCLU  99.8 1.9E-24 6.2E-30  118.6   0.0   76    1-76      3-78  (139)
 385 tr|A0A0D2A5S2|A0A0D2A5S2_9PEZI  99.8   2E-24 6.2E-30  132.7   0.0   76    1-76      1-76  (532)
 386 tr|A0A0D2A5S2|A0A0D2A5S2_9PEZI  99.8   2E-24 6.2E-30  132.7   0.0   76    1-76     77-152 (532)
@@ -397,17 +397,17 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 388 tr|A0A0V1PL29|A0A0V1PL29_9BILA  99.8 2.1E-24 6.6E-30  134.4   0.0   76    1-76    232-307 (626)
 389 tr|K3YR52|K3YR52_SETIT Unchara  99.8 2.3E-24 7.1E-30  134.1   0.0   76    1-76    199-274 (581)
 390 tr|A0A0F4YQR8|A0A0F4YQR8_TALEM  99.8 2.2E-24 7.1E-30  114.6   0.0   60   17-76     61-120 (123)
-391 tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS  99.8 2.4E-24 7.5E-30  134.8   0.0   76    1-76     60-135 (666)
-392 tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS  99.8 2.4E-24 7.5E-30  134.8   0.0   76    1-76    136-211 (666)
-393 tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS  99.8 2.4E-24 7.5E-30  134.8   0.0   76    1-76    212-287 (666)
+391 tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS  99.8 2.4E-24 7.5E-30  134.8   0.0   76    1-76    136-211 (666)
+392 tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS  99.8 2.4E-24 7.5E-30  134.8   0.0   76    1-76    212-287 (666)
+393 tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS  99.8 2.4E-24 7.5E-30  134.8   0.0   76    1-76     60-135 (666)
 394 tr|A0A0S2GEC3|A0A0S2GEC3_9GAMM  99.8 2.5E-24 7.7E-30  108.5   0.0   75    2-76     28-102 (102)
 395 tr|D3FF62|D3FF62_CONWI Ubiquit  99.8 2.6E-24 8.1E-30  127.5   0.0   74    1-74     26-99  (360)
 396 tr|Q7XB18|Q7XB18_9EUKA Ubiquit  99.8 2.6E-24 8.2E-30  114.7   0.0   68    9-76      2-69  (149)
 397 tr|A0A2P6TN86|A0A2P6TN86_CHLSO  99.8 2.6E-24 8.2E-30  137.8   0.0   76    1-76    611-686 (839)
 398 tr|A0A2P6TN86|A0A2P6TN86_CHLSO  99.8 2.6E-24 8.2E-30  137.8   0.0   76    1-76    687-762 (839)
 399 tr|A0A2P6TN86|A0A2P6TN86_CHLSO  99.8 2.6E-24 8.2E-30  137.8   0.0   76    1-76    535-610 (839)
-400 tr|A0A2W1FW77|A0A2W1FW77_9PLEO  99.8 2.7E-24 8.2E-30  132.7   0.0   76    1-76    181-256 (553)
-401 tr|A0A2W1FW77|A0A2W1FW77_9PLEO  99.8 2.7E-24 8.2E-30  132.7   0.0   76    1-76    105-180 (553)
+400 tr|A0A2W1FW77|A0A2W1FW77_9PLEO  99.8 2.7E-24 8.2E-30  132.7   0.0   76    1-76    105-180 (553)
+401 tr|A0A2W1FW77|A0A2W1FW77_9PLEO  99.8 2.7E-24 8.2E-30  132.7   0.0   76    1-76    181-256 (553)
 402 tr|B9FKK7|B9FKK7_ORYSJ Os05g04  99.8 2.7E-24 8.4E-30  107.9   0.0   66   11-76     27-92  (99)
 403 tr|A0A2P6TN86|A0A2P6TN86_CHLSO  99.8 2.7E-24 8.5E-30  137.7   0.0   76    1-76    459-534 (839)
 404 tr|A0A090X8K1|A0A090X8K1_IXORI  99.8 2.8E-24 8.6E-30  122.7   0.0   74    3-76    138-211 (254)
@@ -421,21 +421,21 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 412 tr|A0A1V6SJY0|A0A1V6SJY0_9EURO  99.8 3.2E-24 9.9E-30  122.5   0.0   73    4-76    131-203 (255)
 413 tr|A0A0P5EBU9|A0A0P5EBU9_9CRUS  99.8 3.4E-24   1E-29  130.6   0.0   76    1-76    153-228 (481)
 414 tr|A0A2G2YQJ9|A0A2G2YQJ9_CAPAN  99.8 3.6E-24 1.1E-29  128.1   0.0   76    1-76    319-394 (395)
-415 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76    175-250 (479)
-416 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76    251-326 (479)
-417 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76    327-402 (479)
-418 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76     99-174 (479)
+415 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76    251-326 (479)
+416 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76    175-250 (479)
+417 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76     99-174 (479)
+418 tr|A0A2J6JVH8|A0A2J6JVH8_LACSA  99.8 3.6E-24 1.1E-29  130.4   0.0   76    1-76    327-402 (479)
 419 tr|A0A0L0DLX6|A0A0L0DLX6_THETB  99.8 3.6E-24 1.1E-29  134.1   0.0   76    1-76     77-152 (668)
 420 tr|A0A0L0DLX6|A0A0L0DLX6_THETB  99.8 3.6E-24 1.1E-29  134.1   0.0   76    1-76      1-76  (668)
-421 tr|M7Z4Q9|M7Z4Q9_TRIUA Polyubi  99.8 3.7E-24 1.1E-29  134.6   0.0   76    1-76    363-438 (667)
-422 tr|M7Z4Q9|M7Z4Q9_TRIUA Polyubi  99.8 3.7E-24 1.1E-29  134.6   0.0   76    1-76    287-362 (667)
+421 tr|M7Z4Q9|M7Z4Q9_TRIUA Polyubi  99.8 3.7E-24 1.1E-29  134.6   0.0   76    1-76    287-362 (667)
+422 tr|M7Z4Q9|M7Z4Q9_TRIUA Polyubi  99.8 3.7E-24 1.1E-29  134.6   0.0   76    1-76    363-438 (667)
 423 tr|A0A0V1PL29|A0A0V1PL29_9BILA  99.8 3.7E-24 1.2E-29  133.4   0.0   76    1-76    308-383 (626)
 424 tr|A0A0V1PL29|A0A0V1PL29_9BILA  99.8 3.7E-24 1.2E-29  133.4   0.0   76    1-76    384-459 (626)
 425 tr|A0A0V1PL29|A0A0V1PL29_9BILA  99.8 3.7E-24 1.2E-29  133.4   0.0   76    1-76    460-535 (626)
-426 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76      1-76  (544)
-427 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76     77-152 (544)
-428 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76    229-304 (544)
-429 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76    153-228 (544)
+426 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76    153-228 (544)
+427 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76      1-76  (544)
+428 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76     77-152 (544)
+429 tr|A0A0C2G311|A0A0C2G311_9BILA  99.8 3.8E-24 1.2E-29  131.8   0.0   76    1-76    229-304 (544)
 430 tr|A0A0E9NL44|A0A0E9NL44_9ASCO  99.8 3.9E-24 1.2E-29  126.3   0.0   74    3-76    129-202 (347)
 431 tr|A0A1Y2C1X8|A0A1Y2C1X8_9BASI  99.8 4.1E-24 1.3E-29  103.8   0.0   68    9-76      2-69  (77)
 432 tr|A0A2R9B4F9|A0A2R9B4F9_PANPA  99.8   4E-24 1.3E-29  108.5   0.0   65    1-65      1-65  (89)
@@ -447,8 +447,8 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 438 tr|A0A1E3JYQ8|A0A1E3JYQ8_9TREE  99.8 4.7E-24 1.5E-29  131.9   0.0   76    1-76      1-76  (569)
 439 tr|A0A287QJS7|A0A287QJS7_HORVV  99.8 4.5E-24 1.5E-29  127.9   0.0   76    1-76    180-255 (256)
 440 tr|A0A2U3EPX7|A0A2U3EPX7_9HYPO  99.8 4.8E-24 1.5E-29  133.8   0.0   76    1-76    455-530 (683)
-441 tr|A0A2U3EPX7|A0A2U3EPX7_9HYPO  99.8 4.8E-24 1.5E-29  133.8   0.0   76    1-76    607-682 (683)
-442 tr|A0A2U3EPX7|A0A2U3EPX7_9HYPO  99.8 4.8E-24 1.5E-29  133.8   0.0   76    1-76    531-606 (683)
+441 tr|A0A2U3EPX7|A0A2U3EPX7_9HYPO  99.8 4.8E-24 1.5E-29  133.8   0.0   76    1-76    531-606 (683)
+442 tr|A0A2U3EPX7|A0A2U3EPX7_9HYPO  99.8 4.8E-24 1.5E-29  133.8   0.0   76    1-76    607-682 (683)
 443 tr|Q91N41|Q91N41_BVDV Polyprot  99.8   5E-24 1.5E-29  126.2   0.0   75    2-76     92-166 (357)
 444 tr|A0A0P5EBU9|A0A0P5EBU9_9CRUS  99.8   5E-24 1.5E-29  129.9   0.0   76    1-76      1-76  (481)
 445 tr|A0A0V0TBS0|A0A0V0TBS0_9BILA  99.8   5E-24 1.6E-29  136.9   0.0   76    1-76      1-76  (816)
@@ -465,10 +465,10 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 456 tr|A0A166X4E3|A0A166X4E3_9HYPO  99.8 6.2E-24   2E-29  128.8   0.0   76    1-76    135-210 (376)
 457 tr|A0A0C3DRA7|A0A0C3DRA7_9HOMO  99.8 6.5E-24 2.1E-29  110.4   0.0   76    1-76     34-109 (110)
 458 tr|A0A2P4IF34|A0A2P4IF34_QUESU  99.8 7.6E-24 2.3E-29  125.2   0.0   74    3-76    225-298 (350)
-459 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76     42-117 (959)
-460 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76    194-269 (959)
-461 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76    118-193 (959)
-462 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76    270-345 (959)
+459 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76    270-345 (959)
+460 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76     42-117 (959)
+461 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76    194-269 (959)
+462 tr|A0A151NSC4|A0A151NSC4_ALLMI  99.8 7.6E-24 2.4E-29  136.4   0.0   76    1-76    118-193 (959)
 463 tr|Q41972|Q41972_ARATH Ubiquit  99.8 7.7E-24 2.4E-29  104.7   0.0   76    1-76      1-76  (90)
 464 tr|L8X4R2|L8X4R2_THACA Ubiquit  99.8 7.7E-24 2.4E-29  117.9   0.0   70    7-76     55-124 (207)
 465 tr|A0A1L9TL37|A0A1L9TL37_9EURO  99.8 7.9E-24 2.4E-29  111.8   0.0   68    1-68      1-68  (139)
@@ -481,20 +481,20 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 472 tr|A0A2V0PMW7|A0A2V0PMW7_9CHLO  99.8 8.5E-24 2.6E-29  139.6   0.0   76    1-76   1360-1435(1512)
 473 tr|J3LM68|J3LM68_ORYBR Unchara  99.8 8.7E-24 2.7E-29  115.0   0.0   76    1-76      1-80  (172)
 474 tr|A0A1D6BPK2|A0A1D6BPK2_WHEAT  99.8 8.9E-24 2.8E-29  120.2   0.0   75    1-75     77-151 (246)
-475 tr|A0A0G4LZJ2|A0A0G4LZJ2_9PEZI  99.8 8.9E-24 2.8E-29  133.0   0.0   76    1-76    555-630 (707)
-476 tr|A0A0G4LZJ2|A0A0G4LZJ2_9PEZI  99.8 8.9E-24 2.8E-29  133.0   0.0   76    1-76    631-706 (707)
-477 tr|E9DIZ1|E9DIZ1_COCPS Ubiquit  99.8   1E-23 3.2E-29  131.4   0.0   76    1-76    549-624 (625)
-478 tr|E9DIZ1|E9DIZ1_COCPS Ubiquit  99.8   1E-23 3.2E-29  131.4   0.0   76    1-76    397-472 (625)
-479 tr|E9DIZ1|E9DIZ1_COCPS Ubiquit  99.8   1E-23 3.2E-29  131.4   0.0   76    1-76    473-548 (625)
+475 tr|A0A0G4LZJ2|A0A0G4LZJ2_9PEZI  99.8 8.9E-24 2.8E-29  133.0   0.0   76    1-76    631-706 (707)
+476 tr|A0A0G4LZJ2|A0A0G4LZJ2_9PEZI  99.8 8.9E-24 2.8E-29  133.0   0.0   76    1-76    555-630 (707)
+477 tr|E9DIZ1|E9DIZ1_COCPS Ubiquit  99.8   1E-23 3.2E-29  131.4   0.0   76    1-76    473-548 (625)
+478 tr|E9DIZ1|E9DIZ1_COCPS Ubiquit  99.8   1E-23 3.2E-29  131.4   0.0   76    1-76    549-624 (625)
+479 tr|E9DIZ1|E9DIZ1_COCPS Ubiquit  99.8   1E-23 3.2E-29  131.4   0.0   76    1-76    397-472 (625)
 480 tr|A0A2T7IKB3|A0A2T7IKB3_THEOR  99.8   1E-23 3.2E-29  123.0   0.0   70    1-70    187-256 (308)
 481 tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI  99.8 1.1E-23 3.3E-29  132.9   0.0   75    2-76    421-495 (724)
 482 tr|A0A063BYS4|A0A063BYS4_9HYPO  99.8 1.1E-23 3.3E-29  134.5   0.0   76    1-76    529-604 (861)
 483 tr|A0A139ARE0|A0A139ARE0_GONPR  99.8 1.1E-23 3.4E-29  114.5   0.0   76    1-76      1-76  (171)
 484 tr|A0A0V0RGT0|A0A0V0RGT0_9BILA  99.8 1.1E-23 3.5E-29  136.2   0.0   76    1-76    588-663 (1039)
 485 tr|A0A284QMA9|A0A284QMA9_9AGAR  99.8 1.2E-23 3.6E-29  133.7   0.0   76    1-76    422-497 (802)
-486 tr|A0A284QMA9|A0A284QMA9_9AGAR  99.8 1.2E-23 3.6E-29  133.7   0.0   76    1-76    650-725 (802)
-487 tr|A0A284QMA9|A0A284QMA9_9AGAR  99.8 1.2E-23 3.6E-29  133.7   0.0   76    1-76    574-649 (802)
-488 tr|A0A284QMA9|A0A284QMA9_9AGAR  99.8 1.2E-23 3.6E-29  133.7   0.0   76    1-76    498-573 (802)
+486 tr|A0A284QMA9|A0A284QMA9_9AGAR  99.8 1.2E-23 3.6E-29  133.7   0.0   76    1-76    574-649 (802)
+487 tr|A0A284QMA9|A0A284QMA9_9AGAR  99.8 1.2E-23 3.6E-29  133.7   0.0   76    1-76    498-573 (802)
+488 tr|A0A284QMA9|A0A284QMA9_9AGAR  99.8 1.2E-23 3.6E-29  133.7   0.0   76    1-76    650-725 (802)
 489 tr|A0A0A9SQ10|A0A0A9SQ10_ARUDO  99.8 1.2E-23 3.7E-29  114.5   0.0   76    1-76      1-76  (173)
 490 tr|A0A2K6TMW4|A0A2K6TMW4_SAIBB  99.8 1.2E-23 3.8E-29  111.2   0.0   69    1-69      1-69  (140)
 491 tr|A0A2W1FW77|A0A2W1FW77_9PLEO  99.8 1.2E-23 3.9E-29  129.8   0.0   76    1-76     29-104 (553)
@@ -505,8 +505,8 @@ Command       /share/apps/hh-suite/build/bin/hhblits -d /share/data/uniclust30_2
 496 tr|A0A0N1HWA1|A0A0N1HWA1_9EURO  99.8 1.3E-23 4.3E-29  116.5   0.0   73    4-76      1-80  (158)
 497 tr|A0A1D6C9W1|A0A1D6C9W1_WHEAT  99.8 1.4E-23 4.4E-29  122.7   0.0   76    1-76    212-287 (314)
 498 tr|D2V979|D2V979_NAEGR Predict  99.8 1.5E-23 4.6E-29  109.6   0.0   72    5-76     50-121 (129)
-499 tr|A0A2G3B1S8|A0A2G3B1S8_CAPCH  99.8 1.5E-23 4.6E-29  130.6   0.0   76    1-76    153-228 (614)
-500 tr|A0A2G3B1S8|A0A2G3B1S8_CAPCH  99.8 1.5E-23 4.6E-29  130.6   0.0   76    1-76      1-76  (614)
+499 tr|A0A2G3B1S8|A0A2G3B1S8_CAPCH  99.8 1.5E-23 4.6E-29  130.6   0.0   76    1-76      1-76  (614)
+500 tr|A0A2G3B1S8|A0A2G3B1S8_CAPCH  99.8 1.5E-23 4.6E-29  130.6   0.0   76    1-76    229-304 (614)
 
 No 1
 >tr|A0A0C2C591|A0A0C2C591_9BILA Ubiquitin family protein OS=Ancylostoma duodenale OX=51022 GN=ANCDUO_25125 PE=4 SV=1
@@ -2814,18 +2814,6 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 193
 >tr|R1DZ00|R1DZ00_EMIHU Uncharacterized protein OS=Emiliania huxleyi OX=2903 GN=EMIHUDRAFT_436615 PE=4 SV=1 
-Probab=99.89  E-value=4.1e-27  Score=134.02  Aligned_cols=76  Identities=97%  Similarity=1.354  Sum_probs=74.9  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|.|++++..+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus         1 mqifvktltgktitlevepsdsidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg   76 (256)
-T tr|R1DZ00|R1DZ    1 MQIFVKTLTGKTITLEVEPSDSIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (256)
-Confidence            8999999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 194
->tr|R1DZ00|R1DZ00_EMIHU Uncharacterized protein OS=Emiliania huxleyi OX=2903 GN=EMIHUDRAFT_436615 PE=4 SV=1 
 Probab=99.89  E-value=4.1e-27  Score=134.02  Aligned_cols=76  Identities=97%  Similarity=1.354  Sum_probs=74.8  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -2834,6 +2822,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
 T Consensus        77 mqifvktltgktitlevepsdsidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  152 (256)
 T tr|R1DZ00|R1DZ   77 MQIFVKTLTGKTITLEVEPSDSIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  152 (256)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 194
+>tr|R1DZ00|R1DZ00_EMIHU Uncharacterized protein OS=Emiliania huxleyi OX=2903 GN=EMIHUDRAFT_436615 PE=4 SV=1 
+Probab=99.89  E-value=4.1e-27  Score=134.02  Aligned_cols=76  Identities=97%  Similarity=1.354  Sum_probs=74.9  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|.|++++..+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus         1 mqifvktltgktitlevepsdsidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg   76 (256)
+T tr|R1DZ00|R1DZ    1 MQIFVKTLTGKTITLEVEPSDSIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (256)
+Confidence            8999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
 No 195
@@ -3598,18 +3598,6 @@ Confidence            4799999999999999999999999999999999999999999999999999999999
 
 No 257
 >tr|Q9WR81|Q9WR81_9FLAV Polyprotein (Fragment) OS=Bovine viral diarrhea virus 2 OX=54315 PE=2 SV=1
-Probab=99.87  E-value=4.6e-26  Score=137.14  Aligned_cols=76  Identities=100%  Similarity=1.362  Sum_probs=74.8  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |||||+++.|++++++|+|++|++.+|++|+++.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       224 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  299 (432)
-T tr|Q9WR81|Q9WR  224 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  299 (432)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
-
-
-No 258
->tr|Q9WR81|Q9WR81_9FLAV Polyprotein (Fragment) OS=Bovine viral diarrhea virus 2 OX=54315 PE=2 SV=1
 Probab=99.87  E-value=4.6e-26  Score=137.14  Aligned_cols=76  Identities=100%  Similarity=1.362  Sum_probs=74.7  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -3618,6 +3606,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
 T Consensus       300 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  375 (432)
 T tr|Q9WR81|Q9WR  300 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  375 (432)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999986
+
+
+No 258
+>tr|Q9WR81|Q9WR81_9FLAV Polyprotein (Fragment) OS=Bovine viral diarrhea virus 2 OX=54315 PE=2 SV=1
+Probab=99.87  E-value=4.6e-26  Score=137.14  Aligned_cols=76  Identities=100%  Similarity=1.362  Sum_probs=74.8  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |||||+++.|++++++|+|++|++.+|++|+++.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       224 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  299 (432)
+T tr|Q9WR81|Q9WR  224 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  299 (432)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
 No 259
@@ -3935,8 +3935,8 @@ Probab=99.86  E-value=9e-26  Score=133.44  Aligned_cols=76  Identities=96%  Simi
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|+|+++.|++++++|+|++|+..+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus        50 mqifvktltgktitldvepsdtidavkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  125 (358)
-T tr|A0DBT3|A0DB   50 MQIFVKTLTGKTITLDVEPSDTIDAVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  125 (358)
+T Consensus       198 mqifvktltgktitldvepsdtidavkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  273 (358)
+T tr|A0DBT3|A0DB  198 MQIFVKTLTGKTITLDVEPSDTIDAVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  273 (358)
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -3947,8 +3947,8 @@ Probab=99.86  E-value=9e-26  Score=133.44  Aligned_cols=76  Identities=96%  Simi
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|+|+++.|++++++|+|++|+..+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       198 mqifvktltgktitldvepsdtidavkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  273 (358)
-T tr|A0DBT3|A0DB  198 MQIFVKTLTGKTITLDVEPSDTIDAVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  273 (358)
+T Consensus        50 mqifvktltgktitldvepsdtidavkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  125 (358)
+T tr|A0DBT3|A0DB   50 MQIFVKTLTGKTITLDVEPSDTIDAVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  125 (358)
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -4327,8 +4327,8 @@ Probab=99.85  E-value=3.1e-25  Score=134.99  Aligned_cols=76  Identities=100%  S
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|.|++|++.+|++|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus        77 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  152 (481)
-T tr|A0A0P5EBU9|   77 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  152 (481)
+T Consensus       229 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  304 (481)
+T tr|A0A0P5EBU9|  229 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  304 (481)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
@@ -4339,8 +4339,8 @@ Probab=99.85  E-value=3.1e-25  Score=134.99  Aligned_cols=76  Identities=100%  S
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|.|++|++.+|++|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       229 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  304 (481)
-T tr|A0A0P5EBU9|  229 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  304 (481)
+T Consensus        77 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  152 (481)
+T tr|A0A0P5EBU9|   77 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  152 (481)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
@@ -4382,18 +4382,6 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 321
 >tr|A0A2P2EL59|A0A2P2EL59_9EURO Polyubiquitin OS=Trichophyton mentagrophytes OX=523103 GN=TMEN_4323 PE=4 SV=1
-Probab=99.85  E-value=3.4e-25  Score=129.42  Aligned_cols=76  Identities=96%  Similarity=1.319  Sum_probs=74.7  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|..++|+..+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus        77 mqifvktltgktitlevessdtidnvktkiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  152 (317)
-T tr|A0A2P2EL59|   77 MQIFVKTLTGKTITLEVESSDTIDNVKTKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  152 (317)
-Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 322
->tr|A0A2P2EL59|A0A2P2EL59_9EURO Polyubiquitin OS=Trichophyton mentagrophytes OX=523103 GN=TMEN_4323 PE=4 SV=1
 Probab=99.85  E-value=3.4e-25  Score=129.42  Aligned_cols=76  Identities=96%  Similarity=1.319  Sum_probs=74.8  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -4402,6 +4390,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
 T Consensus         1 mqifvktltgktitlevessdtidnvktkiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg   76 (317)
 T tr|A0A2P2EL59|    1 MQIFVKTLTGKTITLEVESSDTIDNVKTKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (317)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 322
+>tr|A0A2P2EL59|A0A2P2EL59_9EURO Polyubiquitin OS=Trichophyton mentagrophytes OX=523103 GN=TMEN_4323 PE=4 SV=1
+Probab=99.85  E-value=3.4e-25  Score=129.42  Aligned_cols=76  Identities=96%  Similarity=1.319  Sum_probs=74.7  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|..++|+..+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus        77 mqifvktltgktitlevessdtidnvktkiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  152 (317)
+T tr|A0A2P2EL59|   77 MQIFVKTLTGKTITLEVESSDTIDNVKTKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  152 (317)
+Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
 No 323
@@ -4642,18 +4642,6 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 342
 >tr|M8AJB6|M8AJB6_TRIUA Polyubiquitin OS=Triticum urartu OX=4572 GN=TRIUR3_34721 PE=4 SV=1
-Probab=99.84  E-value=6.3e-25  Score=133.11  Aligned_cols=76  Identities=96%  Similarity=1.322  Sum_probs=74.8  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|+.++|+.++|.+|+.++||||++|+|+|.|+.|+|.++|++|+|+..+++|++++++||
-T Consensus       382 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  457 (458)
-T tr|M8AJB6|M8AJ  382 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  457 (458)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
-
-
-No 343
->tr|M8AJB6|M8AJB6_TRIUA Polyubiquitin OS=Triticum urartu OX=4572 GN=TRIUR3_34721 PE=4 SV=1
 Probab=99.84  E-value=6.3e-25  Score=133.11  Aligned_cols=76  Identities=96%  Similarity=1.322  Sum_probs=74.7  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -4661,6 +4649,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
                       |+|||+++.|++++++|+.++|+.++|.+|+.++||||++|+|+|.|+.|+|.++|++|+|+..+++|++++++||
 T Consensus       306 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  381 (458)
 T tr|M8AJB6|M8AJ  306 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  381 (458)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
+
+
+No 343
+>tr|M8AJB6|M8AJB6_TRIUA Polyubiquitin OS=Triticum urartu OX=4572 GN=TRIUR3_34721 PE=4 SV=1
+Probab=99.84  E-value=6.3e-25  Score=133.11  Aligned_cols=76  Identities=96%  Similarity=1.322  Sum_probs=74.8  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|+.++|+.++|.+|+.++||||++|+|+|.|+.|+|.++|++|+|+..+++|++++++||
+T Consensus       382 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  457 (458)
+T tr|M8AJB6|M8AJ  382 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  457 (458)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
@@ -4702,13 +4702,13 @@ Confidence            5688999999999999999999999999999999999999999999999999999999
 
 No 347
 >tr|A0A0V0Z8R1|A0A0V0Z8R1_9BILA Polyubiquitin OS=Trichinella patagoniensis OX=990121 GN=Ubi-p63E PE=4 SV=1
-Probab=99.84  E-value=7e-25  Score=137.21  Aligned_cols=76  Identities=99%  Similarity=1.331  Sum_probs=74.9  Template_Neff=1.186
+Probab=99.84  E-value=7e-25  Score=137.21  Aligned_cols=76  Identities=99%  Similarity=1.354  Sum_probs=74.9  Template_Neff=1.186
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+|++|++.+|.+|+.++|+||++|+|+|+|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       310 mqifvktltgktitleve~sdtienvk~kiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  385 (628)
-T tr|A0A0V0Z8R1|  310 MQIFVKTLTGKTITLEVESSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  385 (628)
+T Consensus       386 mqifvktltgktitleve~sdtienvk~kiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  461 (628)
+T tr|A0A0V0Z8R1|  386 MQIFVKTLTGKTITLEVEPSDTIENVKGKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  461 (628)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -4726,13 +4726,13 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 349
 >tr|A0A0V0Z8R1|A0A0V0Z8R1_9BILA Polyubiquitin OS=Trichinella patagoniensis OX=990121 GN=Ubi-p63E PE=4 SV=1
-Probab=99.84  E-value=7e-25  Score=137.21  Aligned_cols=76  Identities=99%  Similarity=1.354  Sum_probs=74.9  Template_Neff=1.186
+Probab=99.84  E-value=7e-25  Score=137.21  Aligned_cols=76  Identities=99%  Similarity=1.331  Sum_probs=74.9  Template_Neff=1.186
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+|++|++.+|.+|+.++|+||++|+|+|+|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       386 mqifvktltgktitleve~sdtienvk~kiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  461 (628)
-T tr|A0A0V0Z8R1|  386 MQIFVKTLTGKTITLEVEPSDTIENVKGKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  461 (628)
+T Consensus       310 mqifvktltgktitleve~sdtienvk~kiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  385 (628)
+T tr|A0A0V0Z8R1|  310 MQIFVKTLTGKTITLEVESSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  385 (628)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -4774,18 +4774,6 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 353
 >tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI Polyubiquitin OS=Symbiodinium microadriaticum OX=2951 GN=TU20 PE=4 SV=1 
-Probab=99.84  E-value=9.2e-25  Score=137.53  Aligned_cols=76  Identities=96%  Similarity=1.323  Sum_probs=74.8  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |||+|+++.|++++++|+.++|+..+|++|+.++||||++|+|+|.|++|+|.++|++|+|+..+++++++|++||
-T Consensus       572 mqifvktltgktitldveasdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  647 (724)
-T tr|A0A1Q9DY17|  572 MQIFVKTLTGKTITLDVEASDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  647 (724)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 354
->tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI Polyubiquitin OS=Symbiodinium microadriaticum OX=2951 GN=TU20 PE=4 SV=1 
 Probab=99.84  E-value=9.2e-25  Score=137.53  Aligned_cols=76  Identities=96%  Similarity=1.323  Sum_probs=74.9  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -4793,6 +4781,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
                       |||+|+++.|++++++|+.++|+..+|++|+.++||||++|+|+|.|++|+|.++|++|+|+..+++++++|++||
 T Consensus       648 mqifvktltgktitldveasdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  723 (724)
 T tr|A0A1Q9DY17|  648 MQIFVKTLTGKTITLDVEASDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  723 (724)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 354
+>tr|A0A1Q9DY17|A0A1Q9DY17_SYMMI Polyubiquitin OS=Symbiodinium microadriaticum OX=2951 GN=TU20 PE=4 SV=1 
+Probab=99.84  E-value=9.2e-25  Score=137.53  Aligned_cols=76  Identities=96%  Similarity=1.323  Sum_probs=74.8  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |||+|+++.|++++++|+.++|+..+|++|+.++||||++|+|+|.|++|+|.++|++|+|+..+++++++|++||
+T Consensus       572 mqifvktltgktitldveasdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  647 (724)
+T tr|A0A1Q9DY17|  572 MQIFVKTLTGKTITLDVEASDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  647 (724)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -4822,6 +4822,18 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 357
 >tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA Uncharacterized protein OS=Trichoderma harzianum OX=5544 GN=THARTR1_00140 PE=4 SV=1 
+Probab=99.84  E-value=9.3e-25  Score=131.04  Aligned_cols=76  Identities=96%  Similarity=1.321  Sum_probs=74.8  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|+.++|+..+|.+|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       335 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  410 (411)
+T tr|A0A2K0UQQ5|  335 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  410 (411)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 358
+>tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA Uncharacterized protein OS=Trichoderma harzianum OX=5544 GN=THARTR1_00140 PE=4 SV=1 
 Probab=99.84  E-value=9.3e-25  Score=131.04  Aligned_cols=76  Identities=96%  Similarity=1.321  Sum_probs=74.7  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -4832,7 +4844,7 @@ T tr|A0A2K0UQQ5|  183 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSD
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
-No 358
+No 359
 >tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA Uncharacterized protein OS=Trichoderma harzianum OX=5544 GN=THARTR1_00140 PE=4 SV=1 
 Probab=99.84  E-value=9.3e-25  Score=131.04  Aligned_cols=76  Identities=96%  Similarity=1.321  Sum_probs=74.7  Template_Neff=1.000
 
@@ -4842,18 +4854,6 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
 T Consensus       259 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  334 (411)
 T tr|A0A2K0UQQ5|  259 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  334 (411)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
-
-
-No 359
->tr|A0A2K0UQQ5|A0A2K0UQQ5_TRIHA Uncharacterized protein OS=Trichoderma harzianum OX=5544 GN=THARTR1_00140 PE=4 SV=1 
-Probab=99.84  E-value=9.3e-25  Score=131.04  Aligned_cols=76  Identities=96%  Similarity=1.321  Sum_probs=74.8  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|+.++|+..+|.+|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       335 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  410 (411)
-T tr|A0A2K0UQQ5|  335 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  410 (411)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
 No 360
@@ -5122,18 +5122,6 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 382
 >tr|A0A0K6FM12|A0A0K6FM12_9HOMO Polyubiquitin-C OS=Rhizoctonia solani OX=456999 GN=RSOLAG22IIIB_02936 PE=4 SV=1
-Probab=99.83  E-value=1.9e-24  Score=135.51  Aligned_cols=76  Identities=97%  Similarity=1.327  Sum_probs=74.9  Template_Neff=1.121
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |||||+++.|++++++|+.++|+..+|++|+.++|+||++|+|+|.|++|+|.++|++|+|+..+++|+++|++||
-T Consensus       575 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  650 (651)
-T tr|A0A0K6FM12|  575 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  650 (651)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 383
->tr|A0A0K6FM12|A0A0K6FM12_9HOMO Polyubiquitin-C OS=Rhizoctonia solani OX=456999 GN=RSOLAG22IIIB_02936 PE=4 SV=1
 Probab=99.83  E-value=1.9e-24  Score=135.51  Aligned_cols=76  Identities=97%  Similarity=1.327  Sum_probs=74.8  Template_Neff=1.121
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -5141,6 +5129,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
                       |||||+++.|++++++|+.++|+..+|++|+.++|+||++|+|+|.|++|+|.++|++|+|+..+++|+++|++||
 T Consensus       499 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  574 (651)
 T tr|A0A0K6FM12|  499 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  574 (651)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 383
+>tr|A0A0K6FM12|A0A0K6FM12_9HOMO Polyubiquitin-C OS=Rhizoctonia solani OX=456999 GN=RSOLAG22IIIB_02936 PE=4 SV=1
+Probab=99.83  E-value=1.9e-24  Score=135.51  Aligned_cols=76  Identities=97%  Similarity=1.327  Sum_probs=74.9  Template_Neff=1.121
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |||||+++.|++++++|+.++|+..+|++|+.++|+||++|+|+|.|++|+|.++|++|+|+..+++|+++|++||
+T Consensus       575 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  650 (651)
+T tr|A0A0K6FM12|  575 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  650 (651)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -5230,18 +5230,6 @@ Confidence            3455678889999999999999999999999999999999999999999999999999
 
 No 391
 >tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS Polyubiquitin-C OS=Trichinella pseudospiralis OX=6337 GN=prpf38a PE=4 SV=1
-Probab=99.83  E-value=2.4e-24  Score=134.83  Aligned_cols=76  Identities=99%  Similarity=1.357  Sum_probs=74.7  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|.|++|++.+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|++++++||
-T Consensus        60 mqifvktltgktitlevepsdtienvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  135 (666)
-T tr|A0A0V1EWR9|   60 MQIFVKTLTGKTITLEVEPSDTIENVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  135 (666)
-Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 392
->tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS Polyubiquitin-C OS=Trichinella pseudospiralis OX=6337 GN=prpf38a PE=4 SV=1
 Probab=99.83  E-value=2.4e-24  Score=134.83  Aligned_cols=76  Identities=99%  Similarity=1.357  Sum_probs=74.8  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -5252,7 +5240,7 @@ T tr|A0A0V1EWR9|  136 MQIFVKTLTGKTITLEVEPSDTIENVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSD
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
-No 393
+No 392
 >tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS Polyubiquitin-C OS=Trichinella pseudospiralis OX=6337 GN=prpf38a PE=4 SV=1
 Probab=99.83  E-value=2.4e-24  Score=134.83  Aligned_cols=76  Identities=99%  Similarity=1.357  Sum_probs=74.8  Template_Neff=1.000
 
@@ -5262,6 +5250,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
 T Consensus       212 mqifvktltgktitlevepsdtienvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  287 (666)
 T tr|A0A0V1EWR9|  212 MQIFVKTLTGKTITLEVEPSDTIENVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  287 (666)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 393
+>tr|A0A0V1EWR9|A0A0V1EWR9_TRIPS Polyubiquitin-C OS=Trichinella pseudospiralis OX=6337 GN=prpf38a PE=4 SV=1
+Probab=99.83  E-value=2.4e-24  Score=134.83  Aligned_cols=76  Identities=99%  Similarity=1.357  Sum_probs=74.7  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|.|++|++.+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|++++++||
+T Consensus        60 mqifvktltgktitlevepsdtienvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  135 (666)
+T tr|A0A0V1EWR9|   60 MQIFVKTLTGKTITLEVEPSDTIENVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  135 (666)
+Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
 No 394
@@ -5338,18 +5338,6 @@ Confidence            7999999999999999999999999999999999999999999999999999999999
 
 No 400
 >tr|A0A2W1FW77|A0A2W1FW77_9PLEO Tas, oxidoreductase (Aryl-alcohol dehydrogenase) OS=Pyrenophora tritici-repentis OX=45151 GN=A1F96_gene5428 PE=4 SV=1
-Probab=99.83  E-value=2.7e-24  Score=132.65  Aligned_cols=76  Identities=92%  Similarity=1.243  Sum_probs=74.7  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|..++|+..+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       181 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  256 (553)
-T tr|A0A2W1FW77|  181 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVKRMRYG  256 (553)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
-
-
-No 401
->tr|A0A2W1FW77|A0A2W1FW77_9PLEO Tas, oxidoreductase (Aryl-alcohol dehydrogenase) OS=Pyrenophora tritici-repentis OX=45151 GN=A1F96_gene5428 PE=4 SV=1
 Probab=99.83  E-value=2.7e-24  Score=132.65  Aligned_cols=76  Identities=96%  Similarity=1.321  Sum_probs=74.8  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -5358,6 +5346,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
 T Consensus       105 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  180 (553)
 T tr|A0A2W1FW77|  105 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  180 (553)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 401
+>tr|A0A2W1FW77|A0A2W1FW77_9PLEO Tas, oxidoreductase (Aryl-alcohol dehydrogenase) OS=Pyrenophora tritici-repentis OX=45151 GN=A1F96_gene5428 PE=4 SV=1
+Probab=99.83  E-value=2.7e-24  Score=132.65  Aligned_cols=76  Identities=92%  Similarity=1.243  Sum_probs=74.7  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|..++|+..+|.+|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       181 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  256 (553)
+T tr|A0A2W1FW77|  181 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVKRMRYG  256 (553)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
 No 402
@@ -5523,8 +5523,8 @@ Probab=99.82  E-value=3.6e-24  Score=130.43  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+..+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       175 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  250 (479)
-T tr|A0A2J6JVH8|  175 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  250 (479)
+T Consensus       251 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  326 (479)
+T tr|A0A2J6JVH8|  251 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  326 (479)
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -5535,8 +5535,8 @@ Probab=99.82  E-value=3.6e-24  Score=130.43  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+..+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       251 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  326 (479)
-T tr|A0A2J6JVH8|  251 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  326 (479)
+T Consensus       175 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  250 (479)
+T tr|A0A2J6JVH8|  175 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  250 (479)
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -5547,8 +5547,8 @@ Probab=99.82  E-value=3.6e-24  Score=130.43  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+..+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       327 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  402 (479)
-T tr|A0A2J6JVH8|  327 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  402 (479)
+T Consensus        99 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  174 (479)
+T tr|A0A2J6JVH8|   99 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  174 (479)
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -5559,8 +5559,8 @@ Probab=99.82  E-value=3.6e-24  Score=130.43  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+..+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus        99 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  174 (479)
-T tr|A0A2J6JVH8|   99 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  174 (479)
+T Consensus       327 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  402 (479)
+T tr|A0A2J6JVH8|  327 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  402 (479)
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -5590,18 +5590,6 @@ Confidence            8999999999999999999999999999999999999999999999999999999999
 
 No 421
 >tr|M7Z4Q9|M7Z4Q9_TRIUA Polyubiquitin-A OS=Triticum urartu OX=4572 GN=TRIUR3_08047 PE=4 SV=1
-Probab=99.82  E-value=3.7e-24  Score=134.63  Aligned_cols=76  Identities=97%  Similarity=1.327  Sum_probs=74.8  Template_Neff=1.159
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|..++|++.+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       363 mqifvktltgktitleve~sdti~nvkakiqdkegippdqqrlifagkqledgrtl~dyniqkestlhlvlrlrgg  438 (667)
-T tr|M7Z4Q9|M7Z4  363 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  438 (667)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 422
->tr|M7Z4Q9|M7Z4Q9_TRIUA Polyubiquitin-A OS=Triticum urartu OX=4572 GN=TRIUR3_08047 PE=4 SV=1
 Probab=99.82  E-value=3.7e-24  Score=134.63  Aligned_cols=76  Identities=97%  Similarity=1.327  Sum_probs=74.9  Template_Neff=1.159
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -5609,6 +5597,18 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
                       |+|||+++.|++++++|..++|++.+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
 T Consensus       287 mqifvktltgktitleve~sdti~nvkakiqdkegippdqqrlifagkqledgrtl~dyniqkestlhlvlrlrgg  362 (667)
 T tr|M7Z4Q9|M7Z4  287 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  362 (667)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 422
+>tr|M7Z4Q9|M7Z4Q9_TRIUA Polyubiquitin-A OS=Triticum urartu OX=4572 GN=TRIUR3_08047 PE=4 SV=1
+Probab=99.82  E-value=3.7e-24  Score=134.63  Aligned_cols=76  Identities=97%  Similarity=1.327  Sum_probs=74.8  Template_Neff=1.159
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|..++|++.+|++|+.++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       363 mqifvktltgktitleve~sdti~nvkakiqdkegippdqqrlifagkqledgrtl~dyniqkestlhlvlrlrgg  438 (667)
+T tr|M7Z4Q9|M7Z4  363 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  438 (667)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -5650,6 +5650,18 @@ Confidence            7899999999999999999999999999999999999999999999999999999999
 
 No 426
 >tr|A0A0C2G311|A0A0C2G311_9BILA Ubiquitin family protein OS=Ancylostoma duodenale OX=51022 GN=ANCDUO_18484 PE=4 SV=1
+Probab=99.82  E-value=3.8e-24  Score=131.80  Aligned_cols=76  Identities=99%  Similarity=1.330  Sum_probs=74.7  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|..++|++.+|++|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       153 mqifvktltgktitleveasdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  228 (544)
+T tr|A0A0C2G311|  153 MQIFVKTLTGKTITLEVEASDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  228 (544)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
+
+
+No 427
+>tr|A0A0C2G311|A0A0C2G311_9BILA Ubiquitin family protein OS=Ancylostoma duodenale OX=51022 GN=ANCDUO_18484 PE=4 SV=1
 Probab=99.82  E-value=3.8e-24  Score=131.80  Aligned_cols=76  Identities=99%  Similarity=1.330  Sum_probs=74.8  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -5660,7 +5672,7 @@ T tr|A0A0C2G311|    1 MQIFVKTLTGKTITLEVEASDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSD
 Confidence            8999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
-No 427
+No 428
 >tr|A0A0C2G311|A0A0C2G311_9BILA Ubiquitin family protein OS=Ancylostoma duodenale OX=51022 GN=ANCDUO_18484 PE=4 SV=1
 Probab=99.82  E-value=3.8e-24  Score=131.80  Aligned_cols=76  Identities=99%  Similarity=1.330  Sum_probs=74.7  Template_Neff=1.000
 
@@ -5672,7 +5684,7 @@ T tr|A0A0C2G311|   77 MQIFVKTLTGKTITLEVEASDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSD
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
-No 428
+No 429
 >tr|A0A0C2G311|A0A0C2G311_9BILA Ubiquitin family protein OS=Ancylostoma duodenale OX=51022 GN=ANCDUO_18484 PE=4 SV=1
 Probab=99.82  E-value=3.8e-24  Score=131.80  Aligned_cols=76  Identities=99%  Similarity=1.330  Sum_probs=74.7  Template_Neff=1.000
 
@@ -5681,18 +5693,6 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
                       |+|||+++.|++++++|..++|++.+|++|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
 T Consensus       229 mqifvktltgktitleveasdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  304 (544)
 T tr|A0A0C2G311|  229 MQIFVKTLTGKTITLEVEASDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  304 (544)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
-
-
-No 429
->tr|A0A0C2G311|A0A0C2G311_9BILA Ubiquitin family protein OS=Ancylostoma duodenale OX=51022 GN=ANCDUO_18484 PE=4 SV=1
-Probab=99.82  E-value=3.8e-24  Score=131.80  Aligned_cols=76  Identities=99%  Similarity=1.330  Sum_probs=74.7  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|..++|++.+|++|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       153 mqifvktltgktitleveasdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  228 (544)
-T tr|A0A0C2G311|  153 MQIFVKTLTGKTITLEVEASDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  228 (544)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
@@ -5835,9 +5835,9 @@ Probab=99.82  E-value=4.8e-24  Score=133.79  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+.++|.+|+.++|||+++|+|+|.|+.|+|.++|++|+|+..+++|++++++||
-T Consensus       607 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  682 (683)
-T tr|A0A2U3EPX7|  607 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  682 (683)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+T Consensus       531 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  606 (683)
+T tr|A0A2U3EPX7|  531 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  606 (683)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
 No 442
@@ -5847,9 +5847,9 @@ Probab=99.82  E-value=4.8e-24  Score=133.79  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+.++|.+|+.++|||+++|+|+|.|+.|+|.++|++|+|+..+++|++++++||
-T Consensus       531 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  606 (683)
-T tr|A0A2U3EPX7|  531 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  606 (683)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
+T Consensus       607 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  682 (683)
+T tr|A0A2U3EPX7|  607 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  682 (683)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
 No 443
@@ -6051,12 +6051,24 @@ Probab=99.82  E-value=7.6e-24  Score=136.37  Aligned_cols=76  Identities=100%  S
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+|++|++.+|++|+++.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       270 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  345 (959)
+T tr|A0A151NSC4|  270 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  345 (959)
+Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 460
+>tr|A0A151NSC4|A0A151NSC4_ALLMI Scavenger receptor class B member 1 isoform A OS=Alligator mississippiensis OX=8496 GN=SCARB1 PE=4 SV=1
+Probab=99.82  E-value=7.6e-24  Score=136.37  Aligned_cols=76  Identities=100%  Similarity=1.362  Sum_probs=74.8  Template_Neff=1.056
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|+|++|++.+|++|+++.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
 T Consensus        42 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  117 (959)
 T tr|A0A151NSC4|   42 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  117 (959)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
-No 460
+No 461
 >tr|A0A151NSC4|A0A151NSC4_ALLMI Scavenger receptor class B member 1 isoform A OS=Alligator mississippiensis OX=8496 GN=SCARB1 PE=4 SV=1
 Probab=99.82  E-value=7.6e-24  Score=136.37  Aligned_cols=76  Identities=100%  Similarity=1.362  Sum_probs=74.8  Template_Neff=1.056
 
@@ -6068,7 +6080,7 @@ T tr|A0A151NSC4|  194 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSD
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
-No 461
+No 462
 >tr|A0A151NSC4|A0A151NSC4_ALLMI Scavenger receptor class B member 1 isoform A OS=Alligator mississippiensis OX=8496 GN=SCARB1 PE=4 SV=1
 Probab=99.82  E-value=7.6e-24  Score=136.37  Aligned_cols=76  Identities=100%  Similarity=1.362  Sum_probs=74.8  Template_Neff=1.056
 
@@ -6077,18 +6089,6 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
                       |+|||+++.|++++++|+|++|++.+|++|+++.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
 T Consensus       118 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  193 (959)
 T tr|A0A151NSC4|  118 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  193 (959)
-Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 462
->tr|A0A151NSC4|A0A151NSC4_ALLMI Scavenger receptor class B member 1 isoform A OS=Alligator mississippiensis OX=8496 GN=SCARB1 PE=4 SV=1
-Probab=99.82  E-value=7.6e-24  Score=136.37  Aligned_cols=76  Identities=100%  Similarity=1.362  Sum_probs=74.8  Template_Neff=1.056
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|+|++|++.+|++|+++.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       270 mqifvktltgktitlevepsdtienvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  345 (959)
-T tr|A0A151NSC4|  270 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  345 (959)
 Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -6243,8 +6243,8 @@ Probab=99.81  E-value=8.9e-24  Score=132.98  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|..++|+..+|.+|+.++||||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       555 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  630 (707)
-T tr|A0A0G4LZJ2|  555 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  630 (707)
+T Consensus       631 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  706 (707)
+T tr|A0A0G4LZJ2|  631 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  706 (707)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -6255,12 +6255,24 @@ Probab=99.81  E-value=8.9e-24  Score=132.98  Aligned_cols=76  Identities=96%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|..++|+..+|.+|+.++||||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       631 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  706 (707)
-T tr|A0A0G4LZJ2|  631 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  706 (707)
+T Consensus       555 mqifvktltgktitlevessdtidnvkskiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  630 (707)
+T tr|A0A0G4LZJ2|  555 MQIFVKTLTGKTITLEVESSDTIDNVKSKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  630 (707)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
 No 477
+>tr|E9DIZ1|E9DIZ1_COCPS Ubiquitin OS=Coccidioides posadasii (strain RMSCC 757 / Silveira) OX=443226 GN=CPSG_09790 PE=4 SV=1 
+Probab=99.81  E-value=1e-23  Score=131.43  Aligned_cols=76  Identities=96%  Similarity=1.319  Sum_probs=74.8  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|+.++|+.++|.+|++++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       473 mqifvktltgktitlevessdtidnvktkiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  548 (625)
+T tr|E9DIZ1|E9DI  473 MQIFVKTLTGKTITLEVESSDTIDNVKTKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  548 (625)
+Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
+
+
+No 478
 >tr|E9DIZ1|E9DIZ1_COCPS Ubiquitin OS=Coccidioides posadasii (strain RMSCC 757 / Silveira) OX=443226 GN=CPSG_09790 PE=4 SV=1 
 Probab=99.81  E-value=1e-23  Score=131.43  Aligned_cols=76  Identities=96%  Similarity=1.319  Sum_probs=74.8  Template_Neff=1.000
 
@@ -6272,7 +6284,7 @@ T tr|E9DIZ1|E9DI  549 MQIFVKTLTGKTITLEVESSDTIDNVKTKIQDKEGIPPDQQRLIFAGKQLEDGRTLSD
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
-No 478
+No 479
 >tr|E9DIZ1|E9DIZ1_COCPS Ubiquitin OS=Coccidioides posadasii (strain RMSCC 757 / Silveira) OX=443226 GN=CPSG_09790 PE=4 SV=1 
 Probab=99.81  E-value=1e-23  Score=131.43  Aligned_cols=76  Identities=96%  Similarity=1.319  Sum_probs=74.8  Template_Neff=1.000
 
@@ -6281,18 +6293,6 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
                       |+|||+++.|++++++|+.++|+.++|.+|++++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
 T Consensus       397 mqifvktltgktitlevessdtidnvktkiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  472 (625)
 T tr|E9DIZ1|E9DI  397 MQIFVKTLTGKTITLEVESSDTIDNVKTKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  472 (625)
-Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
-
-
-No 479
->tr|E9DIZ1|E9DIZ1_COCPS Ubiquitin OS=Coccidioides posadasii (strain RMSCC 757 / Silveira) OX=443226 GN=CPSG_09790 PE=4 SV=1 
-Probab=99.81  E-value=1e-23  Score=131.43  Aligned_cols=76  Identities=96%  Similarity=1.319  Sum_probs=74.8  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|+.++|+.++|.+|++++|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       473 mqifvktltgktitlevessdtidnvktkiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  548 (625)
-T tr|E9DIZ1|E9DI  473 MQIFVKTLTGKTITLEVESSDTIDNVKTKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  548 (625)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999987
 
 
@@ -6375,8 +6375,8 @@ Probab=99.81  E-value=1.2e-23  Score=133.72  Aligned_cols=76  Identities=97%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+..+|++|++++|+|+++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       650 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  725 (802)
-T tr|A0A284QMA9|  650 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  725 (802)
+T Consensus       574 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  649 (802)
+T tr|A0A284QMA9|  574 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  649 (802)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -6387,8 +6387,8 @@ Probab=99.81  E-value=1.2e-23  Score=133.72  Aligned_cols=76  Identities=97%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+..+|++|++++|+|+++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       574 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  649 (802)
-T tr|A0A284QMA9|  574 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  649 (802)
+T Consensus       498 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  573 (802)
+T tr|A0A284QMA9|  498 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  573 (802)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -6399,8 +6399,8 @@ Probab=99.81  E-value=1.2e-23  Score=133.72  Aligned_cols=76  Identities=97%  Si
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
 Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
                       |+|||+++.|++++++|+.++|+..+|++|++++|+|+++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       498 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  573 (802)
-T tr|A0A284QMA9|  498 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  573 (802)
+T Consensus       650 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtlsdyniqkestlhlvlrlrgg  725 (802)
+T tr|A0A284QMA9|  650 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG  725 (802)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
 
 
@@ -6526,18 +6526,6 @@ Confidence            6788999999999999999999999999999999999999999999999999999999
 
 No 499
 >tr|A0A2G3B1S8|A0A2G3B1S8_CAPCH Polyubiquitin OS=Capsicum chinense OX=80379 GN=BC332_30214 PE=4 SV=1 
-Probab=99.81  E-value=1.5e-23  Score=130.56  Aligned_cols=76  Identities=96%  Similarity=1.322  Sum_probs=74.7  Template_Neff=1.000
-
-Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
-Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
-                      |+|||+++.|++++++|+.++|+..+|++|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
-T Consensus       153 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  228 (614)
-T tr|A0A2G3B1S8|  153 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  228 (614)
-Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
-
-
-No 500
->tr|A0A2G3B1S8|A0A2G3B1S8_CAPCH Polyubiquitin OS=Capsicum chinense OX=80379 GN=BC332_30214 PE=4 SV=1 
 Probab=99.81  E-value=1.5e-23  Score=130.56  Aligned_cols=76  Identities=96%  Similarity=1.322  Sum_probs=74.8  Template_Neff=1.000
 
 Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
@@ -6546,5 +6534,17 @@ Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~
 T Consensus         1 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg   76 (614)
 T tr|A0A2G3B1S8|    1 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG   76 (614)
 Confidence            7999999999999999999999999999999999999999999999999999999999999999999999999997
+
+
+No 500
+>tr|A0A2G3B1S8|A0A2G3B1S8_CAPCH Polyubiquitin OS=Capsicum chinense OX=80379 GN=BC332_30214 PE=4 SV=1 
+Probab=99.81  E-value=1.5e-23  Score=130.56  Aligned_cols=76  Identities=96%  Similarity=1.322  Sum_probs=74.7  Template_Neff=1.000
+
+Q 1aar.pdb.A        1 MQIFVKTLTGKTITLEVEPSDTIENVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLSDYNIQKESTLHLVLRLRGG   76 (76)
+Q Consensus         1 m~i~v~~~~g~~~~~~v~~~~tv~~lK~~i~~~~~i~~~~q~L~~~G~~L~d~~tL~~~~i~~~~~i~l~~~l~gg   76 (76)
+                      |+|||+++.|++++++|+.++|+..+|++|+.+.|+||++|+|+|.|+.|+|.++|++|+|+..+++|+++|++||
+T Consensus       229 mqifvktltgktitlevessdtidnvkakiqdkegippdqqrlifagkqledgrtladyniqkestlhlvlrlrgg  304 (614)
+T tr|A0A2G3B1S8|  229 MQIFVKTLTGKTITLEVESSDTIDNVKAKIQDKEGIPPDQQRLIFAGKQLEDGRTLADYNIQKESTLHLVLRLRGG  304 (614)
+Confidence            7899999999999999999999999999999999999999999999999999999999999999999999999997
 
 

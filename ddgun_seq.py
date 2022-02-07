@@ -93,12 +93,21 @@ def get_options():
                 print('ERROR: DB file clust30_2018_08 not found in',uniref90, file=sys.stderr)
                 sys.exit(5)
         if args.ml:
-                if parse_mut(args.mutations): 
-                        muts[sort_mut(args.mutations)]=[mut for mut in sort_mut(args.mutations).split(sep) if mut!='']
+                if args.mutations.lower() == 'all':
+                        cmuts=get_all(seqfile)
+                elif args.mutations.lower() == 'alascan':
+                        cmuts=get_alascan(seqfile)
+                else:
+                        cmuts=expand_muts([sort_mut(mut) for mut in args.mutations.split(sep) if mut!=""])
+                muts=dict((sort_mut(mut),sort_mut(mut).split(sep)) for mut in cmuts if parse_mut(mut))
+                if len(muts)==0:	
+                        print('ERROR: Incorrect mutation list.', file=sys.stderr)
+                        sys.exit(2)
         else:
                 if os.path.isfile(args.mutations):
                         lmut=open(args.mutations).read()
-                        muts=dict((sort_mut(mut),sort_mut(mut).split(sep)) for mut in lmut.replace(' ','').split('\n') if parse_mut(mut))
+                        cmuts=expand_muts(lmut.replace(' ','').split('\n'))
+                        muts=dict((sort_mut(mut),sort_mut(mut).split(sep)) for mut in cmuts if parse_mut(mut))
         if len(muts)==0:
                 print('ERROR: Incorrect mutation list.', file=sys.stderr)
                 sys.exit(2)
@@ -116,7 +125,7 @@ def parse_mut(imut,sep=','):
                                 c=False
                         else:
                                 v_pos.append(pos)
-                        if aalist.index(mut[0])==-1 or aalist.index(mut[-1])==-1: c=False
+                        if aalist.find(mut[0])==-1 or aalist.find(mut[-1])==-1: c=False
                 except:
                         c=False
                 if not c:
@@ -130,6 +139,48 @@ def sort_mut(imut,sep=','):
         t_mut=[(int(j[1:-1]),j) for j in v_mut]
         t_mut.sort()
         return ','.join([i[1] for i in t_mut])
+
+
+def expand_muts(lmut):
+        vmut=[]
+        for mut in lmut:
+                if mut=='': continue
+                if aalist.find(mut[-1])!=-1: vmut.append(mut)
+                if mut[-1]=="*":
+                        for aa in aalist:
+                                if aa!=mut[0]: vmut.append(mut[:-1]+aa)
+                else:
+                        pass
+        return vmut
+
+
+def get_alascan(seqfile):
+        cmut=[]
+        seq=''
+        lines=open(seqfile)
+        for line in lines:
+                if line.find('>')==-1: seq=seq+line.strip()
+        n=len(seq)
+	for i in range(n):
+                if seq[i]=='A': 
+                        continue
+                else:
+                        for aa in aalist:
+                                if aa!=seq[i]: cmut.append(seq[i]+str(i+1)+aa)
+        return cmut
+
+
+def get_all(seqfile):
+        cmut=[]
+        seq=''
+        lines=open(seqfile)
+        for line in lines:
+                if line.find('>')==-1: seq=seq+line.strip()
+        n=len(seq)
+        for i in range(n):
+                for aa in aalist:
+                        if aa!=seq[i]: cmut.append(seq[i]+str(i+1)+aa)
+        return cmut
 
 
 def ali2fasta(filein,fileout):

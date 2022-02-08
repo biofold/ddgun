@@ -25,7 +25,7 @@
 ##
 
 from __future__ import print_function
-import os, sys, pickle, tempfile, argparse
+import os, sys, pickle, tempfile, argparse, itertools
 try:
 	from subprocess import getstatusoutput
 except:
@@ -46,6 +46,8 @@ aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
 pblast=util_path+'/hh-suite/bin/hhblits'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
+
+
 
 
 def get_options():
@@ -93,20 +95,25 @@ def get_options():
                 print('ERROR: DB file clust30_2018_08 not found in',uniref90, file=sys.stderr)
                 sys.exit(5)
         if args.ml:
+                cmuts=[]
                 if args.mutations.lower() == 'all':
                         cmuts=get_all(seqfile)
                 elif args.mutations.lower() == 'alascan':
                         cmuts=get_alascan(seqfile)
                 else:
-                        cmuts=expand_muts([sort_mut(mut) for mut in args.mutations.split(sep) if mut!=""])
+                        lmut=args.mutations.split(sep)
+                        for mut in lmut:
+                                if mut!='': cmuts=cmuts+expand_mut(mut)
                 muts=dict((sort_mut(mut),sort_mut(mut).split(sep)) for mut in cmuts if parse_mut(mut))
                 if len(muts)==0:	
                         print('ERROR: Incorrect mutation list.', file=sys.stderr)
                         sys.exit(2)
         else:
                 if os.path.isfile(args.mutations):
-                        lmut=open(args.mutations).read()
-                        cmuts=expand_muts(lmut.replace(' ','').split('\n'))
+                        cmuts=[]
+                        lmut=open(args.mutations).read().replace(' ','').split('\n')
+                        for mut in lmut:
+                                if mut!='': cmuts=cmuts+expand_mut(mut)
                         muts=dict((sort_mut(mut),sort_mut(mut).split(sep)) for mut in cmuts if parse_mut(mut))
         if len(muts)==0:
                 print('ERROR: Incorrect mutation list.', file=sys.stderr)
@@ -152,6 +159,25 @@ def expand_muts(lmut):
                 else:
                         pass
         return vmut
+
+
+def expand_mut(mut,sep=','):
+        cmuts=[]
+        lmut=mut.split(sep)
+        for mut in lmut:
+                vmut=[]
+                if mut=='': continue
+                if aalist.find(mut[-1])!=-1: vmut.append(mut)
+                if mut[-1]=="X":
+                        for aa in aalist:
+                                if aa!=mut[0]: vmut.append(mut[:-1]+aa)
+                else:
+                        pass
+                if len(cmuts)==0:
+                        cmuts=vmut
+                else:
+                        cmuts=[i+sep+j for i,j in itertools.product(cmuts,vmut)]
+        return cmuts
 
 
 def get_alascan(seqfile):

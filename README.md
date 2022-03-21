@@ -32,7 +32,8 @@
   Supplementary Files are available at:
   [https://doi.org/10.5281/zenodo.4613881](https://doi.org/10.5281/zenodo.4613881)   
   - [models.tar.gz](https://zenodo.org/record/4613881/files/models.tar.gz?download=1): Models of protein mutants used for the predictions.  
-  - [predictions.tar.gz](https://zenodo.org/record/4613881/files/predictions.tar.gz?download=1): ΔΔG predictions by using DDGun and DDGun3D methods.  
+  - [predictions.tar.gz](https://zenodo.org/record/4613881/files/predictions.tar.gz?download=1): ΔΔG predictions by using DDGun and DDGun3D methods. 
+  - [uniprot20_2016_02.tgz] (https://folding.biofold.org/ddgun/pages/data/uniprot20_2016_02.tgz): DB for hhblits.
   
 
 

@@ -137,7 +137,8 @@ def write_plainhssp(seq,alignments,profile,amino=aaprof,norm=True,nums=[]):
                 prof=profile[i]
                 line='%5d %5d '%(i+1,i+1)
                 if norm:
-                        tot=numpy.sum(prof[:20])
+                        # :25 consider gaps and non standards :20 only stadard aas
+                        tot=numpy.sum(prof[:25])
                         if tot>0:
                                 nval=100./tot
                         else:

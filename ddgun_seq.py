@@ -344,7 +344,7 @@ def run_seq_pipeline(seqfile,blast_prog=pblast,db=uniref90,outdir=None,e=1e-9):
         hsspfile=tmpdir+'/'+seqname+'.hssp'
         if os.path.isfile(blastfile)==False:
                 #cmd=blast_prog+' -i '+seqfile+' -d '+db+' -e '+str(e)+' -j 1 -b 1000 -v 1000 -o '+blastfile
-                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 '
+                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 -e 1e-6'
                 print('1) Run HHBLITS Search', file=sys.stderr)
                 print(cmd, file=sys.stderr)
                 out=getstatusoutput(cmd)

@@ -479,7 +479,7 @@ def run_3d_pipeline(pdbfile,chain,blast_prog=pblast,db=uniref90,outdir=None,atom
                 sys.exit(3)
         if os.path.isfile(blastfile)==False:
                 #cmd=blast_prog+' -i '+seqfile+' -d '+db+' -e '+str(e)+' -j 1 -b 1000 -v 1000 -o '+blastfile
-                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 '
+                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 -e 1e-6'
                 print('2) Run HHBLITS Search', file=sys.stderr)
                 print(cmd, file=sys.stderr)
                 out=getstatusoutput(cmd)

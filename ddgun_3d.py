@@ -44,15 +44,14 @@ sys.path.append(tool_path)
 import pdbTools as pdb
 import dsspTools as dssp
 from hsspTools import readHSSP, hssp2dic
-
+global uniref90
 aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
 pblast=util_path+'/hh-suite/bin/hhblits'
 pdssp=util_path+'/dssp/dsspcmbi'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 at=pdb.HeavyAtomType
-
-
+pblast='/share/apps/hh-suite/build/bin/hhblits'
 
 
 def get_options():
@@ -75,6 +74,7 @@ def get_options():
         parser.add_argument ("--outdir", "--out-dir", action="store",type=str, dest="outdir", help="Output directory")
         parser.add_argument ("-d", "--db", action="store",type=str, dest="dbfile", help="DB file for hhblits")
         parser.add_argument ("-s", "--search-prog", action="store",type=str, dest="hhblits", help="hhblits")
+        parser.add_argument ("-e", "--evalue", action="store",type=float, dest="evalue", help="E-value threhold")
         args = parser.parse_args()
         muts={}
         sep=','
@@ -88,6 +88,7 @@ def get_options():
         verb=0
         dmin=0.0
         dmax=5.0
+        evalue=1.0e-6
         pdbfile=args.pdbfile
         chain=args.chain
         if os.path.isfile(pdbfile)==False:        
@@ -105,10 +106,11 @@ def get_options():
         if args.outfile: outfile=args.outfile
         if args.dbfile: uniref90=args.dbfile
         if args.hhblits: pblast=args.hhblits
+        if args.evalue: evalue=args.evalue
         if not os.path.isfile(pblast):
                 print('ERROR: hhblits program not found in',pblast, file=sys.stderr)
                 sys.exit(4)
-        if not os.path.isfile(uniref90+'_a3m_db.index'):
+        if not os.path.isfile(uniref90+'_a3m.ffindex'):
                 print('ERROR: DB file clust30_2018_08 not found in',uniref90, file=sys.stderr)
                 sys.exit(5)
         if args.ml:
@@ -138,7 +140,7 @@ def get_options():
         if dmin>=dmax:
                 print('ERROR: Incorrect radius distance range ',dmin,dmax, file=sys.stderr)
                 sys.exit(3)
-        return pdbfile,chain,muts,[aa1,aa2,aa3,raa3],[dmin,dmax],win,verb,outfile,outdir
+        return pdbfile,chain,muts,[aa1,aa2,aa3,raa3],[dmin,dmax],win,uniref90,evalue,verb,outfile,outdir
     
 
 def get_pdbchain(pdbfile,chain,atoms=at):
@@ -178,7 +180,7 @@ def sort_mut(imut,sep=','):
 
 def expand_mut(mut,sep=','):
         cmuts=[]
-	lmut=mut.split(sep)
+        lmut=mut.split(sep)
         for mut in lmut:
                 vmut=[]
                 if mut=='': continue
@@ -440,7 +442,7 @@ def get_seq_prof(hsspfile,l_mut,w=2,pot='SKOJ970101'):
         return l_score
 
 
-def run_3d_pipeline(pdbfile,chain,blast_prog=pblast,db=uniref90,outdir=None,atoms=at,dssp_prog=pdssp,e=1e-9):
+def run_3d_pipeline(pdbfile,chain,blast_prog=pblast,db=uniref90,evalue=1.0e-6,outdir=None,atoms=at,dssp_prog=pdssp):
         err=0
         seq=''
         if outdir:
@@ -479,7 +481,7 @@ def run_3d_pipeline(pdbfile,chain,blast_prog=pblast,db=uniref90,outdir=None,atom
                 sys.exit(3)
         if os.path.isfile(blastfile)==False:
                 #cmd=blast_prog+' -i '+seqfile+' -d '+db+' -e '+str(e)+' -j 1 -b 1000 -v 1000 -o '+blastfile
-                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 -e 1e-6'
+                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 -e '+str(evalue)
                 print('2) Run HHBLITS Search', file=sys.stderr)
                 print(cmd, file=sys.stderr)
                 out=getstatusoutput(cmd)
@@ -584,8 +586,8 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
                 
 
 if __name__ == '__main__':
-        pdbfile,chain,muts,pots,d,win,verb,outfile,outdir=get_options()
-        chainfile,dsspfile,hsspfile=run_3d_pipeline(pdbfile,chain,pblast,uniref90,outdir)
+        pdbfile,chain,muts,pots,d,win,dbfile,evalue,verb,outfile,outdir=get_options()
+        chainfile,dsspfile,hsspfile=run_3d_pipeline(pdbfile,chain,pblast,dbfile,evalue,outdir)
         l_data,l_hssp,lres_env=get_muts_score(chainfile,chain,dsspfile,hsspfile,muts,pots,d,win,outdir)
         if len(l_data)==0: 
                 print('ERROR: Incorrect mutation list.', file=sys.stderr)

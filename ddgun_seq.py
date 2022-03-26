@@ -42,11 +42,12 @@ sys.path.append(tool_path)
 
 from hsspTools import readHSSP, hssp2dic
 
+global uniref90
 aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
 pblast=util_path+'/hh-suite/bin/hhblits'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
-
+pblast='/share/apps/hh-suite/build/bin/hhblits'
 
 
 
@@ -65,6 +66,7 @@ def get_options():
         parser.add_argument ("--outdir", "--out-dir", action="store",type=str, dest="outdir", help="Output directory")
         parser.add_argument ("-d", "--db", action="store",type=str, dest="dbfile", help="DB file for hhblits")
         parser.add_argument ("-s", "--search-prog", action="store",type=str, dest="hhblits", help="hhblits")
+        parser.add_argument ("-e", "--evalue", action="store",type=float, dest="evalue", help="E-value threhold")
         args = parser.parse_args()
         aa1='KYTJ820101'
         aa2='HENS920102'
@@ -76,6 +78,7 @@ def get_options():
         outdir=None
         outfile=None
         seqfile=args.seqfile
+        evalue=1.0e-6
         if os.path.isfile(seqfile)==False:        
                 print('ERROR: Incorrect sequence file '+seqfile+'.', file=sys.stderr)
                 sys.exit(1)
@@ -88,10 +91,11 @@ def get_options():
         if args.outfile: outfile=args.outfile
         if args.dbfile: uniref90=args.dbfile
         if args.hhblits: pblast=args.hhblits
+        if args.evalue: evalue=args.evalue
         if not os.path.isfile(pblast):
                 print('ERROR: hhblits program not found in',pblast, file=sys.stderr)
                 sys.exit(4)
-        if not os.path.isfile(uniref90+'_a3m_db.index'):
+        if not os.path.isfile(uniref90+'_a3m.ffindex'):
                 print('ERROR: DB file clust30_2018_08 not found in',uniref90, file=sys.stderr)
                 sys.exit(5)
         if args.ml:
@@ -118,7 +122,7 @@ def get_options():
         if len(muts)==0:
                 print('ERROR: Incorrect mutation list.', file=sys.stderr)
                 sys.exit(2)
-        return seqfile,muts,[aa1,aa2,aa3],win,verb,outfile,outdir
+        return seqfile,muts,[aa1,aa2,aa3],win,uniref90,evalue,verb,outfile,outdir
 
 
 def parse_mut(imut,sep=','):
@@ -187,7 +191,7 @@ def get_alascan(seqfile):
         for line in lines:
                 if line.find('>')==-1: seq=seq+line.strip()
         n=len(seq)
-	for i in range(n):
+        for i in range(n):
                 if seq[i]=='A': 
                         continue
                 else:
@@ -332,7 +336,7 @@ def get_seq_prof(hsspfile,l_mut,w=2,pot='SKOJ970101'):
         return l_score
 
 
-def run_seq_pipeline(seqfile,blast_prog=pblast,db=uniref90,outdir=None,e=1e-9):
+def run_seq_pipeline(seqfile,db=uniref90,evalue=1.0e-9,outdir=None,blast_prog=pblast):
         if outdir:
                 tmpdir=outdir
                 rd=''
@@ -344,7 +348,7 @@ def run_seq_pipeline(seqfile,blast_prog=pblast,db=uniref90,outdir=None,e=1e-9):
         hsspfile=tmpdir+'/'+seqname+'.hssp'
         if os.path.isfile(blastfile)==False:
                 #cmd=blast_prog+' -i '+seqfile+' -d '+db+' -e '+str(e)+' -j 1 -b 1000 -v 1000 -o '+blastfile
-                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 -e 1e-6'
+                cmd=blast_prog+' -d  '+db+'  -i '+seqfile+' -opsi '+blastfile+'x  -n 2 -cpu 4 -e '+str(evalue)
                 print('1) Run HHBLITS Search', file=sys.stderr)
                 print(cmd, file=sys.stderr)
                 out=getstatusoutput(cmd)
@@ -432,8 +436,8 @@ def print_data(seqfile,l_data,l_hssp,verb,sep=','):
 
 
 if __name__ == '__main__':
-        seqfile,muts,pots,win,verb,outfile,outdir=get_options()
-        hsspfile=run_seq_pipeline(seqfile,pblast,uniref90,outdir)
+        seqfile,muts,pots,win,dbfile,evalue,verb,outfile,outdir=get_options()
+        hsspfile=run_seq_pipeline(seqfile,dbfile,evalue,outdir)
         l_data,l_hssp=get_muts_score(seqfile,hsspfile,muts,pots,win,outdir)
         if len(l_data)==0:
                 print('ERROR: Incorrect mutation list.', file=sys.stderr)

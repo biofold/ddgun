@@ -47,7 +47,6 @@ aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
 pblast=util_path+'/hh-suite/bin/hhblits'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
-pblast='/share/apps/hh-suite/build/bin/hhblits'
 
 
 

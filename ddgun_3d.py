@@ -51,7 +51,6 @@ pblast=util_path+'/hh-suite/bin/hhblits'
 pdssp=util_path+'/dssp/dsspcmbi'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 at=pdb.HeavyAtomType
-pblast='/share/apps/hh-suite/build/bin/hhblits'
 
 
 def get_options():

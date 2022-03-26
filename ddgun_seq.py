@@ -42,7 +42,6 @@ sys.path.append(tool_path)
 
 from hsspTools import readHSSP, hssp2dic
 
-global uniref90
 aalist='ARNDCQEGHILKMFPSTWYV'
 pprof=tool_path+'/ali2prof.py'
 pblast=util_path+'/hh-suite/bin/hhblits'

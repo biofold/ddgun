@@ -33,7 +33,7 @@
   [https://doi.org/10.5281/zenodo.4613881](https://doi.org/10.5281/zenodo.4613881)   
   - [models.tar.gz](https://zenodo.org/record/4613881/files/models.tar.gz?download=1): Models of protein mutants used for the predictions.  
   - [predictions.tar.gz](https://zenodo.org/record/4613881/files/predictions.tar.gz?download=1): ΔΔG predictions by using DDGun and DDGun3D methods. 
-  - [uniprot20_2016_02.tgz](https://folding.biofold.org/ddgun/pages/data/uniprot20_2016_02.tgz): Original DB for hhblits.
+  - [uniprot20_2016_02.tgz](https://wwwuser.gwdg.de/~compbiol/data/hhsuite/databases/hhsuite_dbs/old-releases/uniprot20_2016_02.tgz): Original DB for hhblits.
   - [uniclust30_2018_08_hhsuite.tar.gz](http://wwwuser.gwdg.de/~compbiol/uniclust/2018_08/uniclust30_2018_08_hhsuite.tar.gz): New DB for hhblits.
   
 

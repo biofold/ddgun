@@ -47,6 +47,8 @@ pprof=tool_path+'/ali2prof.py'
 pblast=util_path+'/hh-suite/bin/hhblits'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 
+pblast='/export/bass/tools/hh-suite/build/bin/hhblits'
+uniref90='/export/bass/databases/uniclust30_2018_08/uniclust30_2018_08'
 
 
 def get_options():
@@ -399,9 +401,9 @@ def print_data(seqfile,l_data,l_hssp,verb,sep=','):
         nfile=seqfile.split('/')[-1]
         s_mut=[]
         out_data=[]
-        header='#SEQFILE\tVARIANT\tS_DDG\tT_DDG\n'
-        if verb==1: header='#SEQFILE\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tDDG\tT_DDG\n'
-        if verb==2: header='#SEQFILE\tVARIANT\tCONSERVATION\tS_KD\tS_BL\tS_PROF\tDDG\tT_DDG\n'
+        header='#SEQFILE\tVARIANT\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ]\n'
+        if verb==1: header='#SEQFILE\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ\n'
+        if verb==2: header='#SEQFILE\tVARIANT\tCONSERVATION\tS_KD\tS_BL\tS_PROF\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ\n'
         for mut in list(l_data.keys()):
                 s_mut.append([[int(i[1:-1]) for i in mut.split(sep)],mut])
         s_mut.sort()
@@ -424,13 +426,23 @@ def print_data(seqfile,l_data,l_hssp,verb,sep=','):
                         mpred=max(pm)+min(pm)-sum(pm)/float(n)
                 sdata=','.join(v[0])+'\t'+','.join(v[1])+'\t'+','.join(v[2])
                 sext=','.join(v[3])
-                spred=','.join([str(round(i,1)) for i in pm ])+'\t'+str(round(mpred,1))
+                eff=get_effect(mpred)
+                spred=','.join([str(round(i,1)) for i in pm ])+'\t'+str(round(mpred,1))+'\t'+eff
                 if verb==1: line=line+'\t'+sdata
                 if verb==2: line=line+'\t'+sext+'\t'+sdata
                 out_data.append(line+'\t'+spred+'\n')
         if len(out_data)>0: out_data=[header]+out_data
         return out_data
 
+
+def get_effect(value):
+        if round(value,1)>0:
+                eff='Increase'
+        elif round(value,1)<0:
+                eff='Decrease'
+        else:
+                eff='Neutral'
+        return eff
 
 
 if __name__ == '__main__':

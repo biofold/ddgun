@@ -70,30 +70,32 @@
     - Run DDGun 3D:
         ./ddgun_3d.py test/1aar.pdb A test/1aar.muts
 
-        #PDBFILE        CHAIN   VARIANT S_DDG   T_DDG
-        1aar.pdb        A       K6A     0.5     0.5
-        1aar.pdb        A       T7A     -0.3    -0.3
-        1aar.pdb        A       L8A     -0.4    -0.4
-        1aar.pdb        A       T9A,G10A        -0.1,-0.1       -0.1
+        #PDBFILE        CHAIN   VARIANT S_DDG[3D]       T_DDG[3D]       STABILITY[3D]
+        1aar.pdb        A       K6A     0.4     0.4     Increase
+        1aar.pdb        A       T7A     -0.3    -0.3    Decrease
+        1aar.pdb        A       L8A     -0.4    -0.4    Decrease
+        1aar.pdb        A       T9A,G10A        -0.1,-0.1       -0.1    Decrease
 
 
     - Run DDGun Seq:
         ./ddgun_seq.py test/1aar.pdb.A.fasta test/1aar.muts
 
-        #SEQFILE        VARIANT S_DDG   T_DDG
-        1aar.pdb.A.fasta        K6A     0.4     0.4
-        1aar.pdb.A.fasta        T7A     -0.5    -0.5
-        1aar.pdb.A.fasta        L8A     -1.2    -1.2
-        1aar.pdb.A.fasta        T9A,G10A        -0.7,-0.6       -0.7
+        #SEQFILE        VARIANT S_DDG[SEQ]      T_DDG[SEQ]      STABILITY[SEQ]
+        1aar.pdb.A.fasta        K6A     0.3     0.3     Increase
+        1aar.pdb.A.fasta        T7A     -0.5    -0.5    Decrease
+        1aar.pdb.A.fasta        L8A     -1.2    -1.2    Decrease
+        1aar.pdb.A.fasta        T9A,G10A        -0.7,-0.6       -0.6    Decrease
 
 
     - Output Legend:
-        PDBFILE: Inoput PDB File.
-        CHAIN:   Input PDB File Chain.
-        SEQFILE: Input Sequence File.
-        VARIANT: Comma-separated protein variant in the format XPOSY 
-                 (X=Wild-Type Residue, POS=Position, Y=Mutant Residue).
-        S_DDG:   Comma-separated predicted DDG of unfolding for single mutants.
-        T_DDG:   Final predicted DDG of unfolding. For multiple mutant is 
-                 obtained as a combination of the single mutant predictions.
+        PDBFILE:   Inoput PDB File.
+        CHAIN:     Input PDB File Chain.
+        SEQFILE:   Input Sequence File.
+        VARIANT:   Comma-separated protein variant in the format XPOSY 
+                   (X=Wild-Type Residue, POS=Position, Y=Mutant Residue).
+        S_DDG:     Comma-separated predicted DDG of unfolding for single mutants.
+        T_DDG:     Final predicted DDG of unfolding. For multiple mutant is 
+                   obtained as a combination of the single mutant predictions.
+        STABILITY: Decrease/Increase/Neutral
+        [SEQ/3D]:  Sequence/Structure-based predictions
 

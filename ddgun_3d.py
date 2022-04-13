@@ -51,6 +51,8 @@ pdssp=util_path+'/dssp/dsspcmbi'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 at=pdb.HeavyAtomType
 
+pblast='/export/bass/tools/hh-suite/build/bin/hhblits'
+uniref90='/export/bass/databases/uniclust30_2018_08/uniclust30_2018_08'
 
 def get_options():
         global uniref90, pblast
@@ -73,6 +75,7 @@ def get_options():
         parser.add_argument ("-d", "--db", action="store",type=str, dest="dbfile", help="DB file for hhblits")
         parser.add_argument ("-s", "--search-prog", action="store",type=str, dest="hhblits", help="hhblits")
         parser.add_argument ("-e", "--evalue", action="store",type=float, dest="evalue", help="E-value threhold")
+        parser.add_argument ("-b", "--add-seq",action="store_true",dest="add_seq", help="Add sequence-based predictions")
         args = parser.parse_args()
         muts={}
         sep=','
@@ -87,6 +90,7 @@ def get_options():
         dmin=0.0
         dmax=5.0
         evalue=1.0e-6
+        add_seq=False
         pdbfile=args.pdbfile
         chain=args.chain
         if os.path.isfile(pdbfile)==False:        
@@ -105,6 +109,7 @@ def get_options():
         if args.dbfile: uniref90=args.dbfile
         if args.hhblits: pblast=args.hhblits
         if args.evalue: evalue=args.evalue
+        if args.add_seq: add_seq=True
         if not os.path.isfile(pblast):
                 print('ERROR: hhblits program not found in',pblast, file=sys.stderr)
                 sys.exit(4)
@@ -138,7 +143,7 @@ def get_options():
         if dmin>=dmax:
                 print('ERROR: Incorrect radius distance range ',dmin,dmax, file=sys.stderr)
                 sys.exit(3)
-        return pdbfile,chain,muts,[aa1,aa2,aa3,raa3],[dmin,dmax],win,uniref90,evalue,verb,outfile,outdir
+        return pdbfile,chain,muts,[aa1,aa2,aa3,raa3],[dmin,dmax],win,uniref90,evalue,verb,add_seq,outfile,outdir
     
 
 def get_pdbchain(pdbfile,chain,atoms=at):
@@ -501,7 +506,7 @@ def run_3d_pipeline(pdbfile,chain,blast_prog=pblast,db=uniref90,evalue=1.0e-6,ou
         return chainfile,dsspfile,hsspfile
 
 
-def get_muts_score(chainfile,chain,dsspfile,hsspfile,muts,pots,d,win=2,outdir=None):
+def get_muts_score(chainfile,chain,dsspfile,hsspfile,muts,pots,d,win=2,outdir=None,add_seq=False):
         l_data={}
         #l_mut=list(set(muts))
         l_mut=muts
@@ -547,9 +552,9 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
                 except:
                         s_mut.append([[i[1:-1] for i in mut.split(sep)],mut])
         s_mut.sort()
-        header='#PDBFILE\tCHAIN\tVARIANT\tS_DDG\tT_DDG\n'
-        if verb==1: header='#PDBFILE\tCHAIN\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tDDG\tT_DDG\n'
-        if verb==2: header='#PDBFILE\tCHAIN\tVARIANT\tCONSERVATION\tCONTACTS\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tDDG\tT_DDG\n'
+        header='#PDBFILE\tCHAIN\tVARIANT\tS_DDG[3D]\tT_DDG[3D]\tSTABILITY[3D]\n'
+        if verb==1: header='#PDBFILE\tCHAIN\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tS_DDG[3D]\tT_DDG[3D]\tSTABILITY[3D]\n'
+        if verb==2: header='#PDBFILE\tCHAIN\tVARIANT\tCONSERVATION\tCONTACTS\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tS_DDG[3D]\tT_DDG[3D]\tSTABILITY[3D]\n'
         for lpos,mut in s_mut:
                 pm=[]
                 n=len(lpos)
@@ -571,7 +576,8 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
                 sdata=','.join(v[0])+'\t'+','.join(v[1])+'\t'+','.join(v[2])+'\t'+\
                         ','.join(v[3])+'\t'+','.join(v[5])
                 sext=','.join(v[7])+'\t'+','.join(v[8])
-                spred=','.join([str(round(i,1)) for i in pm ])+'\t'+str(round(mpred,1))
+                eff=get_effect(mpred)
+                spred=','.join([str(round(i,1)) for i in pm ])+'\t'+str(round(mpred,1))+'\t'+eff
                 if verb==1: line=line+'\t'+sdata
                 if verb==2: line=line+'\t'+sext+'\t'+sdata
                 out_data.append(line+'\t'+spred+'\n')
@@ -579,18 +585,78 @@ def print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
         return out_data
 
 
+def print_alldata(pdbfile,chain,l_data,l_hssp,lres_env,verb,sep=','):
+        nfile=pdbfile.split('/')[-1]
+        s_mut=[]
+        out_data=[]
+        for mut in list(l_data.keys()):
+                try:
+                        s_mut.append([[int(i[1:-1]) for i in mut.split(sep)],mut])
+                except:
+                        s_mut.append([[i[1:-1] for i in mut.split(sep)],mut])
+        s_mut.sort()
+        header='#PDBFILE\tCHAIN\tVARIANT\tS_DDG_SEQ\tT_DDG_SEQ\tS_DDG[3D]\tT_DDG[3D]\STABILITY[3D]\n'
+        if verb==1: header='#PDBFILE\tCHAIN\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tS_DDG[SEQ]\tT_DDG_SEQ\tSTABILITY[SEQ]\tS_DDG[3D]\tT_DDG[3D]\tSTABILITY[3D]\n'
+        if verb==2: header='#PDBFILE\tCHAIN\tVARIANT\tCONSERVATION\tCONTACTS\tS_KD\tS_BL\tS_PROF\tS_3D[WT]\tRSA[WT]\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ]\tS_DDG[3D]\tT_DDG[3D]\tSTABILITY[3D]\n'
+        for lpos,mut in s_mut:
+                pm=[]
+                sm=[]
+                n=len(lpos)
+                v=[[],[],[],[],[],[],[],[],[]]
+                line='\t'.join([nfile,chain,mut])
+                for j in range(n):
+                        vm=l_data[mut][j]
+                        f1=(1.1-vm[5]*0.01)
+                        # Structure-based prediction
+                        pred=(0.18*vm[0]+0.20*vm[1]-0.29*vm[2]-0.33*vm[3])*f1
+                        # Sequence-based prediction
+                        spred=0.27*vm[0]+0.30*vm[1]-0.43*vm[2]
+                        pm.append(pred)
+                        sm.append(spred)
+                        for k in list(range(4))+[5]: v[k].append('%.3f' %vm[k])
+                        v[7].append('|'.join([str(f) for f in l_hssp[mut][j]]))
+                        v[8].append('|'.join([r+p for r,p in lres_env[mut][j]]))
+                if len(pm)==1:
+                        mpred=pm[0]
+                        smpred=sm[0]
+                else:
+                        mpred=max(pm)+min(pm)-sum(pm)/float(n)
+                        smpred=max(sm)+min(sm)-sum(sm)/float(n)
+                sdata=','.join(v[0])+'\t'+','.join(v[1])+'\t'+','.join(v[2])+'\t'+\
+                        ','.join(v[3])+'\t'+','.join(v[5])
+                sext=','.join(v[7])+'\t'+','.join(v[8])
+                eff=get_effect(mpred)
+                seff=get_effect(smpred) 
+                str_pred=','.join([str(round(i,1)) for i in pm ])+'\t'+str(round(mpred,1))+'\t'+eff
+                str_spred=','.join([str(round(i,1)) for i in sm ])+'\t'+str(round(smpred,1))+'\t'+seff
+                if verb==1: line=line+'\t'+sdata
+                if verb==2: line=line+'\t'+sext+'\t'+sdata
+                out_data.append(line+'\t'+str_spred+'\t'+str_pred+'\n')
+        if len(out_data)>0: out_data=[header]+out_data
+        return out_data
 
-        
+
+def get_effect(value):
+        if round(value,1)>0:
+                eff='Increase'
+        elif round(value,1)<0:
+                eff='Decrease'
+        else:
+                eff='Neutral'
+        return eff 
                 
 
 if __name__ == '__main__':
-        pdbfile,chain,muts,pots,d,win,dbfile,evalue,verb,outfile,outdir=get_options()
+        pdbfile,chain,muts,pots,d,win,dbfile,evalue,verb,add_seq,outfile,outdir=get_options()
         chainfile,dsspfile,hsspfile=run_3d_pipeline(pdbfile,chain,pblast,dbfile,evalue,outdir)
         l_data,l_hssp,lres_env=get_muts_score(chainfile,chain,dsspfile,hsspfile,muts,pots,d,win,outdir)
         if len(l_data)==0: 
                 print('ERROR: Incorrect mutation list.', file=sys.stderr)
                 sys.exit()
-        out_data=print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb)
+        if add_seq:
+                out_data=print_alldata(pdbfile,chain,l_data,l_hssp,lres_env,verb)
+        else:
+                out_data=print_data(pdbfile,chain,l_data,l_hssp,lres_env,verb)
         if len(out_data)==0:
                 print('ERROR: No predictions returned. Check your input.', file=sys.stderr)
                 sys.exit(1)

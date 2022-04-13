@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 from __future__ import print_function
+import warnings
+warnings.filterwarnings("ignore")
 import sys, os, tempfile, numpy
 try:
         from subprocess import getstatusoutput
 except:
         from commands import getstatusoutput
 from optparse import OptionParser
-#from Bio.Blast import NCBIStandalone
-from Bio.SearchIO._legacy import NCBIStandalone
+try:
+        from Bio.SearchIO._legacy import NCBIStandalone
+except:
+        from Bio.Blast import NCBIStandalone
 from Bio import SeqIO
 aalist='ARNDCQEGHILKMFPSTWYV'
 aaprof='VLIMFWYGAPSTCHRKQENDBUZX'
@@ -200,7 +204,7 @@ def check_input(options,args):
 
 
 if (__name__  == '__main__'):
-        parser = OptionParser('\nUsage : python %prog  seqfile alignment outfiles \n')
+        parser = OptionParser('\n  python %prog seqfile alignment outfiles \n')
         (options, args) = parser.parse_args()
         # Defined default input
         seqfile,alignfile,outfile,err=check_input(options,args)

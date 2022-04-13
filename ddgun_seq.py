@@ -47,8 +47,6 @@ pprof=tool_path+'/ali2prof.py'
 pblast=util_path+'/hh-suite/bin/hhblits'
 uniref90=data_path+'/uniclust30_2018_08/uniclust30_2018_08'
 
-pblast='/export/bass/tools/hh-suite/build/bin/hhblits'
-uniref90='/export/bass/databases/uniclust30_2018_08/uniclust30_2018_08'
 
 
 def get_options():

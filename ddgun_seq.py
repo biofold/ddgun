@@ -400,8 +400,8 @@ def print_data(seqfile,l_data,l_hssp,verb,sep=','):
         s_mut=[]
         out_data=[]
         header='#SEQFILE\tVARIANT\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ]\n'
-        if verb==1: header='#SEQFILE\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ\n'
-        if verb==2: header='#SEQFILE\tVARIANT\tCONSERVATION\tS_KD\tS_BL\tS_PROF\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ\n'
+        if verb==1: header='#SEQFILE\tVARIANT\t\tS_KD\tS_BL\tS_PROF\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ]\n'
+        if verb==2: header='#SEQFILE\tVARIANT\tCONSERVATION\tS_KD\tS_BL\tS_PROF\tS_DDG[SEQ]\tT_DDG[SEQ]\tSTABILITY[SEQ]\n'
         for mut in list(l_data.keys()):
                 s_mut.append([[int(i[1:-1]) for i in mut.split(sep)],mut])
         s_mut.sort()

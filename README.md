@@ -76,19 +76,21 @@
 
         #PDBFILE        CHAIN   VARIANT S_DDG[3D]       T_DDG[3D]       STABILITY[3D]
         1aar.pdb        A       K6A     0.4     0.4     Increase
-        1aar.pdb        A       T7A     -0.3    -0.3    Decrease
-        1aar.pdb        A       L8A     -0.4    -0.4    Decrease
+        1aar.pdb        A       K6E     -0.0    -0.0    Neutral
+        1aar.pdb        A       T7Q     -0.3    -0.3    Decrease
         1aar.pdb        A       T9A,G10A        -0.1,-0.1       -0.1    Decrease
+        1aar.pdb        A       Y59W    -0.4    -0.4    Decrease
 
 
     - Run DDGun Seq:
         ./ddgun_seq.py test/1aar.pdb.A.fasta test/1aar.muts
 
         #SEQFILE        VARIANT S_DDG[SEQ]      T_DDG[SEQ]      STABILITY[SEQ]
-        1aar.pdb.A.fasta        K6A     0.3     0.3     Increase
-        1aar.pdb.A.fasta        T7A     -0.5    -0.5    Decrease
-        1aar.pdb.A.fasta        L8A     -1.2    -1.2    Decrease
-        1aar.pdb.A.fasta        T9A,G10A        -0.7,-0.6       -0.6    Decrease
+        1aarA.fasta        K6A     0.3     0.3     Increase
+        1aarA.fasta        K6E     0.0     0.0     Neutral
+        1aarA.fasta        T7Q     -0.6    -0.6    Decrease
+        1aarA.fasta        T9A,G10A        -0.7,-0.6       -0.6    Decrease
+        1aarA.fasta        Y59W    -0.6    -0.6    Decrease
 
 
     - Output Legend:
@@ -100,6 +102,6 @@
         S_DDG:     Comma-separated predicted DDG of unfolding for single mutants.
         T_DDG:     Final predicted DDG of unfolding. For multiple mutant is 
                    obtained as a combination of the single mutant predictions.
-        STABILITY: Decrease/Increase/Neutral
+        STABILITY: Stability change: Decrease/Increase/Neutral
         [SEQ/3D]:  Sequence/Structure-based predictions
 

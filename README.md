@@ -40,6 +40,10 @@
 
 #### INSTALLATION
 
+     # Prerequired packages
+       - numpy
+       - biopython
+
      # Automatic Installation
        git clone https://github.com/biofold/ddgun
        cd ddgun

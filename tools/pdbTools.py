@@ -471,10 +471,10 @@ class RESIDUE:
        currentDistance=999999.9
        for i in selfList:
           if(i in self.AtomNames):     
-             vi=numpy.array(self.Coord[self.AtomNames.index(i)],numpy.float)
+             vi=numpy.array(self.Coord[self.AtomNames.index(i)],float)
              for j in resList:
                 if(j in Residue.AtomNames):
-                   vj=numpy.array(Residue.Coord[Residue.AtomNames.index(j)],numpy.float)
+                   vj=numpy.array(Residue.Coord[Residue.AtomNames.index(j)],float)
                    numpy.add(vi,-vj,vj)
                    currentDistance= numpy.sqrt(numpy.dot(vj,vj))
                 if (currentDistance < minDistance):
@@ -634,7 +634,7 @@ class PDBChain:
                v4=self.getCoordResAtom(i+1,'N')
                psi=_torsion(v1,v2,v3,v4)
            PhiPsi.append((phi,psi)) 
-       PhiPsi=numpy.array(PhiPsi,numpy.float)
+       PhiPsi=numpy.array(PhiPsi,float)
        if(inRadiants != 'Y'):
            conversionFactor=180.0/numpy.pi
            PhiPsi=PhiPsi*conversionFactor
